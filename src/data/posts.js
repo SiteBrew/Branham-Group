@@ -5,7 +5,7 @@ export const posts = [
     title: 'Branham Group Attends 2026 Georgia Solar Farm Summit',
     excerpt:
       'Branham Group joined GASFS26 in Athens, GA — engaging with the nation\'s premier agrivoltaics conference and reinforcing its commitment to responsible solar development and land stewardship across the Southeast.',
-    img: '/georgia-solar-summit-2026.jpg',
+    img: '/gasfs-2026-hero.png',
     body: `The Branham Group team attended the 2026 Georgia Solar Farm Summit (GASFS26), held July 15–16 at The Georgia Center on the University of Georgia campus in Athens, GA. Organized by Solar Farm Summit LLC, the summit convenes leading interdisciplinary practitioners across energy, agriculture, planning, and research to advance responsible solar development, land conservation, and farm viability.
 
 This year's summit centered on agrivoltaics (AgPV) — the intentional co-location of agriculture and solar energy systems on the same parcel of land. Sessions covered solar grazing, crop cultivation beneath and between panels, pollinator habitat and conservation, and ecovoltaics — pairing solar development with soil health, water management, and forestry protection. With Georgia's agricultural and forestry sectors representing a $70 billion-plus industry, the summit explored how agrivoltaics offers a framework for integrating renewable energy with working lands without sacrificing productivity or long-term land health.
