@@ -1,5 +1,27 @@
 export const posts = [
   {
+    date: 'February 2026',
+    category: 'Healthcare & Renewable Energy',
+    title: 'Looking to Lead: How a National Healthcare Organization is Using Renewable Energy to Reduce Costs and Emissions',
+    excerpt:
+      'Branham Group partnered with a nationally recognized healthcare organization to deploy on-site solar PV — generating over 692,000 kWh annually, offsetting 490 metric tons of CO₂, and projecting $2.5 million in cumulative savings over 25 years.',
+    img: '/hospital-solar-hero.png',
+    body: `U.S. healthcare systems are among the nation's most energy-intensive organizations, accounting for approximately 9% of total domestic carbon emissions. Globally, the U.S. healthcare sector represents 27% of the total healthcare carbon footprint — ranking it as the 13th largest carbon emitter in the world if it were a country.
+
+The healthcare industry faces a "triple threat" regarding energy and environmental impact: emission intensity (approximately 40% of global healthcare emissions stem from electricity, gas, heating, and cooling generation), grid dependency (hospitals rely on centralized grids increasingly stressed by extreme weather and rising demand), and financial pressure from escalating energy costs and peak demand charges.
+
+The client approached Branham Group with aggressive sustainability targets: a 50% reduction in Scope 1 and Scope 2 emissions by 2030, carbon neutrality by 2030, and net-zero emissions by 2050. Hospitals operate 24/7 and require absolute energy reliability. Branham Group was engaged to design and install an on-site solar PV system at a major hospital campus to meet these decarbonization goals without compromising critical care operations.
+
+Branham Group implemented a facility-based solar energy system supported by modernized electrical infrastructure. The system utilizes a zero-export approach, ensuring 100% of the clean energy produced is consumed directly by the hospital facility to offset high-cost utility power.
+
+Key technical and economic elements include over 692,000 kWh of annual power production; projected Year 1 savings of $85,000 to $110,000 based on average commercial healthcare rates; over $2.5 million in cumulative savings over a 25-year system life factoring in conservative utility price inflation; seamless integration with existing infrastructure to ensure uninterrupted power; and a modular design that allows for future expansion and improved grid modernization.
+
+The environmental impact is equally significant. The system offsets approximately 490 metric tons of CO₂ annually — equivalent to the carbon sequestered by 580 acres of U.S. forests in a single year. With federal incentives like the Investment Tax Credit (ITC), similar healthcare installations typically achieve full ROI within 5 to 7 years, providing nearly two decades of essentially free energy thereafter.
+
+Healthcare organizations play a critical role in addressing climate change. By investing in on-site renewable energy and grid modernization, providers can significantly reduce emissions while strengthening operational resiliency. Branham Group recommends expanding on-site renewable generation across facility portfolios where feasible, integrating energy planning into long-term capital strategies, and leveraging clean energy projects to meet both aggressive sustainability targets and bottom-line financial objectives.`,
+  },
+,
+  {
     date: 'July 2026',
     category: 'Agrivoltaics & Industry Events',
     title: 'Branham Group Attends 2026 Georgia Solar Farm Summit',
