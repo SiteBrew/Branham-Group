@@ -5,16 +5,16 @@ const projects = [
   {
     id: 1,
     client: 'City Roots',
-    title: 'Microgreens Farm — Net-Zero Energy System',
+    title: 'City Roots',
     category: 'Agriculture & Renewable Energy',
     tag: 'Agriculture',
     tagColor: 'bg-green-100 text-green-800',
     location: 'Columbia, SC',
     img: '/cityroots-aerial.jpg',
     heroImg: '/cityroots-sunset.jpg',
-    gallery: ['/cityroots-aerial.jpg', '/cityroots-sunset.jpg', '/cityroots-greenhouse.jpg', '/cityroots-commissioning.jpg'],
+    gallery: ['/cityroots-aerial.jpg', '/cityroots-sunset.jpg', '/cityroots-greenhouse.jpg', '/cityroots-commissioning.jpg', '/cityroots-new-1.jpg', '/cityroots-new-2.jpg', '/cityroots-new-3.jpg', '/cityroots-new-4.jpg'],
     summary:
-      'A 480kW solar + 80-ton geothermal system transformed City Roots\' Columbia, SC farm into a fully net-zero operation — generating 780,175 kWh annually and delivering $175,450 in yearly utility savings.',
+      'By integrating solar power and geothermal energy, the microgreens farm achieved net-zero energy usage, demonstrating that renewable energy adoption is both feasible and beneficial for small-scale agricultural operations.',
     overview:
       'City Roots Organic Farm in Columbia, SC initially relied on grid electricity and fossil fuels. Rising energy costs and a commitment to sustainable practices led management to partner with Branham Group on a comprehensive renewable energy transformation: a 480kW ground-mount solar array paired with an 80-ton geothermal system, delivering 780,175 kWh of annual solar production and 2.5 million BTU of annual geothermal output — achieving complete net-zero energy status.',
     scope: [
@@ -38,16 +38,16 @@ const projects = [
   {
     id: 2,
     client: 'Nucor Steel',
-    title: 'Solar Canopy — Clean Energy & Community Space',
+    title: 'Nucor Canopy',
     category: 'Industrial Solar',
     tag: 'Industrial',
     tagColor: 'bg-blue-100 text-blue-800',
     location: 'South Carolina',
     img: '/nucor-exterior.png',
     heroImg: '/nucor-interior.jpg',
-    gallery: ['/nucor-exterior.png', '/nucor-interior.jpg', '/nucor-commissioning.jpg'],
+    gallery: ['/nucor-exterior.png', '/nucor-interior.jpg', '/nucor-commissioning.jpg', '/nucor-new-1.jpg', '/nucor-new-2.jpg', '/nucor-new-3.jpg', '/nucor-new-4.png'],
     summary:
-      'An 81kW DC solar canopy at Nucor Steel\'s South Carolina facility generates 175,392 kWh annually, offsets 2,537 tons of CO₂ over its lifetime, and creates covered outdoor gathering space for employees and the community.',
+      'The solar canopy generates renewable energy and additionally provides functional company and community outdoor space. From daily employee gatherings to corporate events, the canopy space contributes to a positive corporate culture. The solar canopy and the renewable energy it generates support Nucor\'s commitment to sourcing diverse, clean energy for its circular steelmaking operations.',
     overview:
       'Nucor Steel engaged Branham Group to design and build a dual-purpose solar installation: a large-format canopy structure generating meaningful clean energy for plant operations while providing attractive outdoor gathering space. The 81kW DC system delivers 175,392 kWh of annual production and is projected to offset 2,537 metric tons of CO₂ over its lifetime — the equivalent of 4,631,638 car miles not driven, or 30,556 trees planted.',
     scope: [
@@ -71,15 +71,16 @@ const projects = [
   {
     id: 3,
     client: 'Lumenant',
-    title: 'Healthcare Solar Portfolio — 8 Sites, 1,480kW DC',
+    title: 'Lumenant',
     category: 'Healthcare Solar Portfolio',
     tag: 'Commercial',
     tagColor: 'bg-yellow-100 text-yellow-800',
     location: 'Southeast United States',
     img: '/lumenant-array-layout.jpg',
     heroImg: '/lumenant-array-layout.jpg',
+    gallery: ['/lumenant-array-layout.jpg', '/lumenant-new-1.jpg'],
     summary:
-      'Branham Group executed an 8-site, 1,480kW DC solar portfolio for Lumenant across healthcare facilities in the Southeast — generating 2,420,000 kWh annually and offsetting 37,920 tons of CO₂ over the systems\' lifetime.',
+      'The portfolio of on-site renewable energy projects was created to reduce carbon footprint, lower utility costs, improve energy security, and enhance resilience, ultimately contributing to a cleaner and healthier environment.',
     overview:
       'Lumenant engaged Branham Group to design and deliver a large-scale on-site solar energy portfolio across 8 healthcare facilities in the Southeast. Each 185kW DC ground-mount array was custom-engineered to the site\'s layout and electrical constraints. Combined, the 8-site portfolio delivers 1,480kW DC of capacity, generates 2,420,000 kWh of clean electricity annually, and is projected to offset 37,920 tons of CO₂ over its lifetime — the equivalent of 86 million car miles not driven.',
     scope: [
@@ -102,18 +103,19 @@ const projects = [
   },
   {
     id: 4,
-    client: 'OceanaGold',
-    title: 'Industrial Reverse Osmosis Water Plants',
+    client: 'ReWa',
+    title: 'ReWa',
     category: 'Industrial Infrastructure',
-    tag: 'Mining',
+    tag: 'Industrial',
     tagColor: 'bg-orange-100 text-orange-800',
-    location: 'Haile Gold Mine, SC',
-    img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1400&q=80',
+    location: 'South Carolina',
+    img: '/rewa-1.jpg',
+    heroImg: '/rewa-1.jpg',
+    gallery: ['/rewa-1.jpg', '/rewa-2.jpg', '/rewa-3.jpg', '/rewa-4.jpg'],
     summary:
-      'Reverse osmosis water treatment plants are critical to OceanaGold\'s mining operations, providing purified process water with strict contaminant control. Branham Group handled foundations, mechanical, and wastewater recycling infrastructure.',
+      'Reverse osmosis plants are crucial in industrial operations for providing purified water with low levels of contaminants, which helps reduce equipment wear and extend the lifespan of critical infrastructure. The scope of work includes concrete foundations, rebar fabrication, excavation, and ensuring sustainability through efficient construction and wastewater recycling.',
     overview:
-      'OceanaGold\'s Haile Gold Mine required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
+      'ReWa required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
     scope: [
       'Engineered concrete foundations for treatment units',
       'Reverse osmosis system mechanical installation',
@@ -121,11 +123,11 @@ const projects = [
       'Wastewater collection and recycling infrastructure',
       'Environmental compliance and containment systems',
     ],
-    industry: 'Mining',
+    industry: 'Industrial',
     application: 'Industrial Water Treatment',
     outcomes: [
       { label: 'System Type', value: 'Reverse Osmosis' },
-      { label: 'Application', value: 'Gold Mining' },
+      { label: 'Application', value: 'Water Treatment' },
       { label: 'Feature', value: 'Wastewater Recycling' },
       { label: 'Compliance', value: 'Environmental' },
     ],
@@ -140,8 +142,9 @@ const projects = [
     tag: 'Healthcare',
     tagColor: 'bg-pink-100 text-pink-800',
     location: 'Southeast United States',
-    img: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=900&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1400&q=80',
+    img: '/brownfield-solar-2.jpg',
+    heroImg: '/brownfield-solar-1.jpg',
+    gallery: ['/brownfield-solar-2.jpg', '/brownfield-solar-1.jpg', '/solar-sunset-racking.jpg'],
     summary:
       'A Southeast healthcare system targeting 50% Scope 1 & 2 emissions reduction by 2030 partnered with Branham Group for an on-site solar installation generating 692,000+ kWh annually — delivering $2.5M in projected lifetime savings and offsetting 490 metric tons of CO₂ per year.',
     overview:
@@ -166,22 +169,23 @@ const projects = [
   },
   {
     id: 6,
-    client: 'HGMSY',
-    title: '24.9kV Electrical Switchyard',
+    client: 'HGM',
+    title: 'HGM Switchyard',
     category: 'Electrical Infrastructure',
     tag: 'Utility',
     tagColor: 'bg-purple-100 text-purple-800',
     location: 'South Carolina',
-    img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80',
-    heroImg: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80',
+    img: '/hgm-1.jpg',
+    heroImg: '/hgm-1.jpg',
+    gallery: ['/hgm-1.jpg', '/hgm-2.jpg', '/hgm-3.jpg', '/hgm-4.jpg'],
     summary:
-      'A new 24.9kV switchyard engineered to enhance the client\'s electrical distribution network — increasing reliability, expanding capacity, and futureproofing the facility\'s power infrastructure.',
+      'A new switchyard engineered to enhance the client\'s electrical distribution network — increasing reliability, expanding capacity, and futureproofing the facility\'s power infrastructure.',
     overview:
-      'HGMSY required a purpose-built medium-voltage switchyard to handle increased electrical loads and improve the resilience of their distribution network. Branham Group provided full EPC services: from civil site preparation and structural installation through high-voltage electrical integration and commissioning, delivering a system built for long-term reliability.',
+      'HGM required a purpose-built medium-voltage switchyard to handle increased electrical loads and improve the resilience of their distribution network. Branham Group provided full EPC services: from civil site preparation and structural installation through high-voltage electrical integration and commissioning, delivering a system built for long-term reliability.',
     scope: [
       'Civil site preparation and grading',
       'Structural steel and equipment foundations',
-      '24.9kV switchgear and disconnect installation',
+      'Switchgear and disconnect installation',
       'Medium-voltage cable and bus duct installation',
       'Protective relay programming and commissioning',
     ],
@@ -194,11 +198,11 @@ const projects = [
       { label: 'Delivery', value: 'Full EPC' },
     ],
     quote:
-      'The objective of this new 24.9kV switchyard is to enhance the client\'s electrical distribution network\'s reliability and capacity.',
+      'The new switchyard enhances the client\'s electrical distribution network\'s reliability and capacity.',
   },
 ];
 
-const filters = ['All', 'Agriculture', 'Industrial', 'Commercial', 'Mining', 'Healthcare', 'Utility'];
+const filters = ['All', 'Agriculture', 'Industrial', 'Commercial', 'Healthcare', 'Utility'];
 
 function ProjectModal({ project, onClose }) {
   const [heroIdx, setHeroIdx] = useState(0);

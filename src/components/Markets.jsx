@@ -2,32 +2,26 @@ const markets = [
   {
     title: 'Commercial',
     desc: 'Office buildings, retail centers, and institutional facilities built for durability and long-term efficiency.',
-    icon: '🏢',
   },
   {
     title: 'Industrial',
     desc: 'Manufacturing plants, warehouses, and production facilities engineered for high-performance operations.',
-    icon: '🏭',
   },
   {
     title: 'Healthcare',
     desc: 'Medical campuses and clinical facilities requiring precision, compliance, and energy resilience.',
-    icon: '🏥',
   },
   {
     title: 'Utility',
     desc: 'Power generation, distribution systems, and grid infrastructure for reliable energy delivery.',
-    icon: '⚡',
   },
   {
     title: 'Agriculture',
     desc: 'Sustainable agricultural infrastructure integrating renewable energy for net-zero farm operations.',
-    icon: '🌾',
   },
   {
     title: 'Mining',
     desc: 'Foundation work, electrical systems, and switchyard installations for complex extraction operations.',
-    icon: '⛏️',
   },
 ];
 
@@ -44,17 +38,16 @@ export default function Markets() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {markets.map((m) => (
             <div
               key={m.title}
-              className="border border-gray-200 p-8 hover:border-gold hover:shadow-lg transition-all duration-300 group"
+              className="border-l-4 border-gold pl-5 py-1"
             >
-              <div className="w-8 h-1 bg-gold mb-5" />
-              <h3 className="text-xl font-bold text-charcoal mb-3 group-hover:text-gold transition-colors duration-200">
-                {m.title}
-              </h3>
-              <p className="text-charcoal-muted text-sm leading-relaxed">{m.desc}</p>
+              <h3 className="font-bold text-charcoal text-lg">{m.title}</h3>
+              <p className="text-charcoal-muted text-sm leading-relaxed mt-1.5">
+                {m.desc}
+              </p>
             </div>
           ))}
         </div>

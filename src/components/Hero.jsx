@@ -7,10 +7,10 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80')`,
+          backgroundImage: `url('/brownfield-solar-1.jpg')`,
         }}
         role="img"
-        aria-label="Aerial view of solar panels on a commercial rooftop"
+        aria-label="Large-scale ground-mount solar installation by Branham Group on a redeveloped site in the Southeast"
       />
       {/* Base dark overlay for overall contrast */}
       <div className="absolute inset-0 bg-charcoal/70" />

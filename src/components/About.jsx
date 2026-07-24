@@ -25,10 +25,10 @@ export default function About() {
             <div
               className="rounded-lg overflow-hidden aspect-[4/3] bg-cover bg-center shadow-2xl"
               style={{
-                backgroundImage: `url('/branham-office.jpg')`,
+                backgroundImage: `url('/about-hero.jpg')`,
               }}
               role="img"
-              aria-label="Branham Group office building"
+              aria-label="Branham Group office building exterior at Mount Pleasant, SC"
             />
             {/* Gold accent badge */}
             <div className="absolute -bottom-6 -right-6 bg-gold text-white p-6 shadow-xl hidden md:block">
@@ -44,16 +44,10 @@ export default function About() {
               A Legacy of Building<br />a Better Tomorrow
             </h2>
             <p className="text-charcoal-muted leading-relaxed mb-4">
-              Founded in 1979 in South Carolina, Branham Group has grown from a
-              regional construction firm into a second-generation EPC company operating across
-              the Southeast — serving clients throughout South Carolina, North Carolina, Georgia,
-              and Florida.
+              Founded in 1979 in South Carolina, Branham Group has grown from a regional construction firm into a second-generation EPC company serving clients across the Southeast, including South Carolina, North Carolina, Georgia, and Florida.
             </p>
             <p className="text-charcoal-muted leading-relaxed mb-8">
-              In 2010, we made a strategic pivot toward renewable energy and sustainable building
-              practices. Today, we manage complete project lifecycles — from engineering and design
-              through procurement and construction — bringing proven technology, innovation
-              and quality to every project we deliver.
+              In 2010, we made a strategic pivot toward renewable energy and sustainable building practices. Today, we manage complete project lifecycles — from engineering and design through procurement and construction — bringing Southeast-rooted expertise and uncompromising quality to every project we deliver.
             </p>
 
             <div className="space-y-5 mb-10">

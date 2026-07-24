@@ -6,12 +6,13 @@ export default function CTA() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `url('/nucor-interior.jpg')`,
+          backgroundImage: `url('/branham-corporate-interior.jpg')`,
+          filter: 'brightness(0.88)',
         }}
         role="img"
-        aria-label="Solar panels generating clean energy"
+        aria-label="Professional multi-level interior event space at Branham Group featuring branded presentation displays"
       />
-      <div className="absolute inset-0 bg-charcoal/88" />
+      <div className="absolute inset-0 bg-charcoal/90" />
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <p className="text-gold uppercase tracking-[0.25em] text-sm font-semibold mb-4">
           Let's Build Together

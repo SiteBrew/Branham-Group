@@ -4,6 +4,16 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, X } from 'lucide-react';
 import { posts } from '../data/posts';
 
+function linkify(text) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  return parts.map((part, i) =>
+    part.startsWith('http')
+      ? <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-gold underline hover:brightness-110 break-all">{part}</a>
+      : part
+  );
+}
+
 function ArticleModal({ post, onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -25,9 +35,9 @@ function ArticleModal({ post, onClose }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Hero image */}
-        <div className="relative h-64 md:h-72">
+        <div className="relative h-64 md:h-72 bg-gray-100">
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat"
             style={{ backgroundImage: `url('${post.img}')` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -49,7 +59,7 @@ function ArticleModal({ post, onClose }) {
         <div className="p-6 md:p-10">
           {post.body.split('\n\n').map((para, i) => (
             <p key={i} className="text-charcoal-muted leading-relaxed text-sm md:text-base mb-5 last:mb-0">
-              {para}
+              {linkify(para)}
             </p>
           ))}
         </div>
@@ -69,7 +79,7 @@ export default function NewsPage() {
     <>
       <Helmet>
         <title>News &amp; Insights | Branham Group — EPC Contractor Southeast US</title>
-        <meta name="description" content="Stay current with Branham Group's latest project completions, industry recognition, and clean energy news across South Carolina, North Carolina, Georgia, and Florida. Read about solar installations, infrastructure milestones, and sustainability awards." />
+        <meta name="description" content="Stay current with Branham Group's latest news on sustainability, energy siting, and industry insights across South Carolina, North Carolina, Georgia, and Florida. Read about renewable energy policy, healthcare sustainability, and clean energy developments." />
         <meta name="keywords" content="Branham Group news, EPC contractor news South Carolina, solar installation news Southeast, clean energy projects SC NC GA FL, renewable energy contractor updates" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branhamgroup.com/news" />
@@ -97,7 +107,7 @@ export default function NewsPage() {
             News &amp; Insights
           </h1>
           <p className="text-gray-400 max-w-2xl leading-relaxed">
-            Stay current with Branham Group's latest project completions, industry recognition,
+            Stay current with Branham Group's latest news on sustainability, industry insights,
             and clean energy developments across the Southeast.
           </p>
         </div>
@@ -113,9 +123,9 @@ export default function NewsPage() {
                 className="bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
                 onClick={() => setSelected(post)}
               >
-                <div className="overflow-hidden">
+                <div className="overflow-hidden bg-gray-100">
                   <div
-                    className="h-56 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    className="aspect-square bg-contain bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url('${post.img}')` }}
                     role="img"
                     aria-label={post.title}

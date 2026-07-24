@@ -1,4 +1,4 @@
-import { MapPin, Phone } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const links = {
@@ -44,11 +44,7 @@ export default function Footer() {
                 <MapPin size={14} className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span>11 eWall Street, Mount Pleasant, SC 29464</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} className="text-gold flex-shrink-0" aria-hidden="true" />
-                <a href="tel:+18438236078" className="hover:text-gold transition-colors">(843) 823-6078</a>
-              </div>
-            </address>
+                          </address>
             <div className="flex gap-3 mt-6">
               {[
                 { label: 'in', href: 'https://www.linkedin.com/company/branham-group-inc/', title: 'LinkedIn' },
