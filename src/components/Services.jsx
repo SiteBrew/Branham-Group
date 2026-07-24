@@ -23,7 +23,7 @@ const services = [
     icon: PenTool,
     title: 'Design-Build',
     desc: 'Speed and efficiency without sacrificing quality. Our design-build approach integrates architecture, engineering, and construction into a single, streamlined process — reducing project timelines and giving owners greater cost certainty from day one.',
-    img: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=600&q=80',
+    img: '/design-build.jpg',
   },
 ];
 
