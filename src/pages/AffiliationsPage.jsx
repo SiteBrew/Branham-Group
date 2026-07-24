@@ -15,14 +15,14 @@ const affiliations = [
     tagBg: 'bg-green-100 text-green-800',
   },
   {
-    name: 'Green Business Benchmark',
-    role: 'Platinum Certified — 2024',
-    desc: 'Branham Group holds Platinum Certification from the Green Business Benchmark program — the highest tier of recognition for businesses that demonstrate measurable, verified commitment to sustainable operations, environmental stewardship, and responsible business practices.',
-    href: 'https://app.greenbusinessbenchmark.com/profile/branham-group-inc.-default-group?tab=certification',
-    logo: 'https://cdn.prod.website-files.com/6656062834d1bf3450b8d0de/66df5ad9a455342aee40bb5b_GBB_Clearyst_Logo_1.svg',
+    name: 'Nature At Work SC',
+    role: 'Founding Member',
+    desc: 'Branham Group is a proud Founding Member of Nature At Work SC — a statewide initiative connecting South Carolina businesses to the natural world through conservation, stewardship, and a commitment to protecting the landscapes that sustain our communities and economy.',
+    href: 'https://natureatworksc.org/',
+    logo: '/nature-at-work-badge.png',
     logoBg: 'bg-white',
-    tag: 'Sustainability',
-    tagBg: 'bg-yellow-100 text-yellow-800',
+    tag: 'Conservation',
+    tagBg: 'bg-green-100 text-green-800',
   },
   {
     name: 'Sustain SC',
@@ -75,18 +75,18 @@ export default function AffiliationsPage() {
     <>
       <Helmet>
         <title>Industry Affiliations &amp; Partners | Branham Group — EPC Contractor SC</title>
-        <meta name="description" content="Branham Group is a Green Business Benchmark Platinum Certified company (2024), a Lowcountry Land Trust 2025 Corporate Partner, and a member of Sustain SC, the SC Chamber of Commerce, SC Solar Council, and Global Charleston." />
-        <meta name="keywords" content="Branham Group affiliations, Green Business Benchmark Platinum, Lowcountry Land Trust Corporate Partner, Sustain SC member, SC Solar Council, SC Chamber of Commerce, sustainable EPC contractor South Carolina" />
+        <meta name="description" content="Branham Group is a Founding Member of Nature At Work SC, a 2025 Corporate Partner of the Lowcountry Land Trust, and a member of Sustain SC, the SC Chamber of Commerce, SC Solar Council, and Global Charleston." />
+        <meta name="keywords" content="Branham Group affiliations, Nature At Work SC Founding Member, Lowcountry Land Trust Corporate Partner, Sustain SC member, SC Solar Council, SC Chamber of Commerce, sustainable EPC contractor South Carolina" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branhamgroup.com/affiliations" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.branhamgroup.com/affiliations" />
         <meta property="og:title" content="Industry Affiliations &amp; Partners | Branham Group" />
-        <meta property="og:description" content="Green Business Benchmark Platinum Certified 2024. Lowcountry Land Trust 2025 Corporate Partner. Member of Sustain SC, SC Solar Council, SC Chamber of Commerce, and Global Charleston." />
+        <meta property="og:description" content="Nature At Work SC Founding Member. Lowcountry Land Trust 2025 Corporate Partner. Member of Sustain SC, SC Solar Council, SC Chamber of Commerce, and Global Charleston." />
         <meta property="og:image" content="https://www.branhamgroup.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Industry Affiliations &amp; Partners | Branham Group" />
-        <meta name="twitter:description" content="Green Business Benchmark Platinum Certified. Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council &amp; more." />
+        <meta name="twitter:description" content="Nature At Work SC Founding Member. Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council &amp; more." />
       </Helmet>
 
       {/* Page header */}
