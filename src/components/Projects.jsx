@@ -103,19 +103,19 @@ const projects = [
   },
   {
     id: 4,
-    client: 'ReWa',
-    title: 'ReWa',
+    client: 'OceanaGold',
+    title: 'OceanaGold Haile Gold Mine',
     category: 'Industrial Infrastructure',
-    tag: 'Industrial',
+    tag: 'Mining',
     tagColor: 'bg-orange-100 text-orange-800',
-    location: 'South Carolina',
-    img: '/rewa-1.jpg',
-    heroImg: '/rewa-1.jpg',
-    gallery: ['/rewa-1.jpg', '/rewa-2.jpg', '/rewa-3.jpg', '/rewa-4.jpg'],
+    location: 'Haile Gold Mine, SC',
+    img: '/oceana-ro-1.jpg',
+    heroImg: '/oceana-ro-1.jpg',
+    gallery: ['/oceana-ro-1.jpg', '/oceana-ro-2.jpg', '/oceana-ro-3.jpg', '/oceana-ro-4.jpg'],
     summary:
-      'Reverse osmosis plants are crucial in industrial operations for providing purified water with low levels of contaminants, which helps reduce equipment wear and extend the lifespan of critical infrastructure. The scope of work includes concrete foundations, rebar fabrication, excavation, and ensuring sustainability through efficient construction and wastewater recycling.',
+      'Reverse osmosis (R.O.) plants are crucial in industrial operations for providing purified water with low levels of contaminants, which helps reduce equipment wear and extend the lifespan of critical infrastructure. The scope of work includes concrete foundations, rebar fabrication, excavation, and ensuring sustainability through efficient construction and wastewater recycling.',
     overview:
-      'ReWa required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
+      'OceanaGold\'s Haile Gold Mine required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
     scope: [
       'Engineered concrete foundations for treatment units',
       'Reverse osmosis system mechanical installation',
@@ -123,11 +123,11 @@ const projects = [
       'Wastewater collection and recycling infrastructure',
       'Environmental compliance and containment systems',
     ],
-    industry: 'Industrial',
+    industry: 'Mining',
     application: 'Industrial Water Treatment',
     outcomes: [
       { label: 'System Type', value: 'Reverse Osmosis' },
-      { label: 'Application', value: 'Water Treatment' },
+      { label: 'Application', value: 'Gold Mining' },
       { label: 'Feature', value: 'Wastewater Recycling' },
       { label: 'Compliance', value: 'Environmental' },
     ],
@@ -202,7 +202,7 @@ const projects = [
   },
 ];
 
-const filters = ['All', 'Agriculture', 'Industrial', 'Commercial', 'Healthcare', 'Utility'];
+const filters = ['All', 'Agriculture', 'Industrial', 'Commercial', 'Mining', 'Healthcare', 'Utility'];
 
 function ProjectModal({ project, onClose }) {
   const [heroIdx, setHeroIdx] = useState(0);
