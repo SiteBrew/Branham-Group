@@ -5,7 +5,7 @@ const services = [
     icon: ClipboardList,
     title: 'Preconstruction Services',
     desc: 'We lay the groundwork before a shovel hits the dirt. Our preconstruction team delivers detailed cost estimating, site analysis, scheduling, value engineering, and constructability reviews — setting every project up for on-time, on-budget execution.',
-    img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+    img: '/preconstruction-array-layout.jpg',
   },
   {
     icon: HardHat,
