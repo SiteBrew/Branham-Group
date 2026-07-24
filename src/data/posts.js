@@ -5,7 +5,7 @@ export const posts = [
     title: 'Looking to Lead: How a National Healthcare Organization is Using Renewable Energy to Reduce Costs and Emissions',
     excerpt:
       'Branham Group partnered with a nationally recognized healthcare organization to deploy on-site solar PV — generating over 692,000 kWh annually, offsetting 490 metric tons of CO₂, and projecting $2.5 million in cumulative savings over 25 years.',
-    img: '/hospital-solar-hero.png',
+    img: '/hospital-array-layout.png',
     body: `U.S. healthcare systems are among the nation's most energy-intensive organizations, accounting for approximately 9% of total domestic carbon emissions. Globally, the U.S. healthcare sector represents 27% of the total healthcare carbon footprint — ranking it as the 13th largest carbon emitter in the world if it were a country.
 
 The healthcare industry faces a "triple threat" regarding energy and environmental impact: emission intensity (approximately 40% of global healthcare emissions stem from electricity, gas, heating, and cooling generation), grid dependency (hospitals rely on centralized grids increasingly stressed by extreme weather and rising demand), and financial pressure from escalating energy costs and peak demand charges.
