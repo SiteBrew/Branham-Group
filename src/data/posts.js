@@ -112,38 +112,4 @@ Branham Group's ability to manage a complex, multi-site deployment across active
       'Read the full post on LinkedIn: https://www.linkedin.com/posts/branham-group-inc_sustainability-infrastructure-engineering-activity-7390050545312432128--g88',
     ].join('\n'),
   },
-  {
-    date: 'July 2024',
-    category: 'Agriculture & Renewable Energy',
-    title: 'City Roots Farm Achieves Net-Zero Energy Through Integrated Solar & Geothermal System',
-    excerpt:
-      'A 480kW solar array and 80-ton geothermal system transformed City Roots Organic Farm in Columbia, SC into a net-zero operation — generating 780,175 kWh annually and delivering $175,450 in yearly utility savings.',
-    img: '/cityroots-aerial.jpg',
-    body: `City Roots Organic Farm, located in Columbia, South Carolina, initially relied on conventional grid electricity and fossil fuels to power its greenhouse operations. Rising energy costs and a commitment to sustainable agriculture prompted the farm's management to explore a comprehensive clean energy solution — and they selected Branham Group to design and deliver it.
-
-Branham Group engineered and installed a 480kW ground-mount solar array paired with an 80-ton geothermal heat exchange system — a fully integrated approach that addressed both electricity generation and climate control simultaneously. The solar installation produces 780,175 kWh of clean electricity annually, while the geothermal system contributes 2.5 million BTU of annual thermal output for greenhouse heating and cooling. Together, the systems deliver $175,450 in annual utility savings and achieve complete net-zero energy status for the farm.
-
-The project scope extended beyond generation: Branham Group managed ABB inverter integration, electrical distribution upgrades, greenhouse environmental automation, and full grid interconnection with net-metering — coordinating every system to function as a single, optimized energy ecosystem.
-
-"Branham Group and their project team were integral in developing our conceptual design and then our project delivery," said Eric McClam, Managing Partner of City Roots. "Their knowledge, experience, and service were invaluable to our new operation."
-
-City Roots now operates as a model for sustainable commercial agriculture in the Southeast — supplying fresh produce to local restaurants and retailers powered entirely by clean energy, and demonstrating that ambitious net-zero goals are achievable even for small-scale farming operations with the right EPC partner.`,
-  },
-  {
-    date: 'Case Study',
-    category: 'Industrial Solar',
-    title: 'Nucor Steel: 81kW Solar Canopy Powers Clean Energy & Community Space',
-    excerpt:
-      'Branham Group designed and constructed an 81kW DC solar canopy at a Nucor Steel facility in South Carolina — producing 175,392 kWh annually, offsetting 2,537 tons of CO₂ over the system\'s lifetime, and creating a functional outdoor space for employees and the community.',
-    img: '/nucor-exterior.png',
-    body: `Nucor Steel, one of North America's largest steel producers, challenged Branham Group to design and build a solar installation that served a dual purpose: generating meaningful renewable energy for steelmaking operations while creating an attractive, functional outdoor space for employees and the broader community.
-
-The result is an 81kW DC solar canopy — a large-format photovoltaic structure that combines high-capacity clean energy generation with covered outdoor gathering space. The canopy is engineered to withstand the demanding conditions of an industrial environment while delivering consistent, high-performance solar output year-round.
-
-At full production, the system generates 175,392 kilowatt-hours of electricity annually — directly reducing the facility's dependence on grid power and providing a tangible contribution to Nucor's broader sustainability commitments. Over the system's lifetime, the installation is projected to offset 2,537 metric tons of CO₂, equivalent to removing hundreds of vehicles from the road for a year. To put the scale in perspective: that's the equivalent of 4,631,638 car miles not driven, or 30,556 trees planted and grown to maturity.
-
-Branham Group managed the complete EPC scope from structural engineering and canopy design through high-capacity PV panel installation, electrical integration with plant power systems, outdoor amenity construction, and all safety and code compliance requirements.
-
-The Nucor solar canopy is a testament to how industrial facilities can lead on sustainability — transforming operational infrastructure into a visible demonstration of corporate environmental responsibility while delivering measurable financial returns through reduced energy costs.`,
-  },
 ];

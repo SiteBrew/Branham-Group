@@ -19,7 +19,7 @@ const affiliations = [
     role: 'Founding Member',
     desc: 'Branham Group is a Founding Member of Nature at Work SC — a statewide initiative that connects workplace wellness with environmental stewardship. Built on the premise that healthier people and healthier places are deeply connected through nature, Nature at Work brings together employers, communities, and nature-based service providers to transform how we live and work across South Carolina.',
     href: 'https://natureatworksc.org/',
-    logo: '/nature-at-work-logo.png',
+    logo: '/nature-at-work-badge.png',
     logoBg: 'bg-white',
     tag: 'Wellness & Stewardship',
     tagBg: 'bg-green-100 text-green-800',
