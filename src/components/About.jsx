@@ -25,10 +25,10 @@ export default function About() {
             <div
               className="rounded-lg overflow-hidden aspect-[4/3] bg-cover bg-center shadow-2xl"
               style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80')`,
+                backgroundImage: `url('/branham-office.jpg')`,
               }}
               role="img"
-              aria-label="Branham Group field team at a solar installation project"
+              aria-label="Branham Group office building"
             />
             {/* Gold accent badge */}
             <div className="absolute -bottom-6 -right-6 bg-gold text-white p-6 shadow-xl hidden md:block">
