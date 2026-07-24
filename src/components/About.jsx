@@ -25,7 +25,7 @@ export default function About() {
             <div
               className="rounded-lg overflow-hidden aspect-[4/3] bg-cover bg-center shadow-2xl"
               style={{
-                backgroundImage: `url('/about-hero.jpg')`,
+                backgroundImage: `url('/branham-office.jpg')`,
               }}
               role="img"
               aria-label="Branham Group office building exterior at Mount Pleasant, SC"
