@@ -11,7 +11,7 @@ const services = [
     icon: HardHat,
     title: 'Construction Management',
     desc: 'From mobilization through final commissioning, our construction managers coordinate every trade, schedule, and resource on site. We maintain strict quality control and safety standards to deliver projects that perform exactly as designed.',
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+    img: '/construction-management.jpg',
   },
   {
     icon: Layers,
