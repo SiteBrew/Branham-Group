@@ -142,9 +142,9 @@ const projects = [
     tag: 'Healthcare',
     tagColor: 'bg-pink-100 text-pink-800',
     location: 'Southeast United States',
-    img: '/brownfield-solar-2.jpg',
-    heroImg: '/brownfield-solar-1.jpg',
-    gallery: ['/brownfield-solar-2.jpg', '/brownfield-solar-1.jpg', '/solar-sunset-racking.jpg'],
+    img: '/healthcare-array-layout.png',
+    heroImg: '/healthcare-array-layout.png',
+    gallery: ['/healthcare-array-layout.png'],
     summary:
       'A Southeast healthcare system targeting 50% Scope 1 & 2 emissions reduction by 2030 partnered with Branham Group for an on-site solar installation generating 692,000+ kWh annually — delivering $2.5M in projected lifetime savings and offsetting 490 metric tons of CO₂ per year.',
     overview:
