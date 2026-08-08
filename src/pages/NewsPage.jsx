@@ -63,18 +63,21 @@ function ArticleModal({ post, onClose }) {
             </p>
           ))}
 
-          {/* Full case study CTA */}
+          {/* Full page CTA */}
           {post.caseStudy && (
             <div className="mt-8 pt-8 border-t border-gray-200">
               <p className="text-charcoal-muted text-sm mb-4">
-                This is a summary. Read the complete case study — full findings, data, project
-                imagery, and downloadable PDF.
+                {post.type === 'case-study'
+                  ? 'This is a summary. Read the complete case study — full findings, data, project imagery, and downloadable PDF.'
+                  : 'This is a summary. Read the complete release — full detail, quotes, and takeaways.'}
               </p>
               <Link
                 to={`/news/${post.caseStudy}`}
                 className="inline-flex items-center gap-2 bg-gold hover:brightness-110 text-white text-sm font-semibold px-6 py-3 uppercase tracking-wider transition-all"
               >
-                <FileText size={16} /> Read Full Case Study <ArrowRight size={16} />
+                <FileText size={16} />
+                {post.type === 'case-study' ? 'Read Full Case Study' : 'Read Full Release'}
+                <ArrowRight size={16} />
               </Link>
             </div>
           )}
@@ -84,12 +87,38 @@ function ArticleModal({ post, onClose }) {
   );
 }
 
+const FILTERS = ['All', 'Case Studies', 'News'];
+
+// `type` is the content category (what it is).
+// `caseStudy` is a slug meaning "has a full standalone page" — not all case
+// studies have one, and a news item can (e.g. the GASFS press release).
+const isCaseStudy = (p) => p.type === 'case-study';
+
+// Case studies lead — completed project proof before industry commentary.
+// Original array order is preserved within each group (newest first).
+const sortedPosts = [...posts.filter(isCaseStudy), ...posts.filter((p) => !isCaseStudy(p))];
+
 export default function NewsPage() {
   const [selected, setSelected] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('All');
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
+
+  const filtered =
+    activeFilter === 'Case Studies'
+      ? sortedPosts.filter(isCaseStudy)
+      : activeFilter === 'News'
+      ? sortedPosts.filter((p) => !isCaseStudy(p))
+      : sortedPosts;
+
+  const caseStudyCount = posts.filter(isCaseStudy).length;
+  const counts = {
+    All: posts.length,
+    'Case Studies': caseStudyCount,
+    News: posts.length - caseStudyCount,
+  };
 
   return (
     <>
@@ -123,8 +152,8 @@ export default function NewsPage() {
             News &amp; Case Studies
           </h1>
           <p className="text-gray-400 max-w-2xl leading-relaxed">
-            Stay current with Branham Group's latest news on sustainability, industry insights,
-            and clean energy developments across the Southeast.
+            In-depth case studies from completed projects, plus the latest on sustainability,
+            industry insights, and clean energy developments across the Southeast.
           </p>
         </div>
       </div>
@@ -132,8 +161,29 @@ export default function NewsPage() {
       {/* Articles grid */}
       <div className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Filters */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                aria-pressed={activeFilter === f}
+                className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                  activeFilter === f
+                    ? 'bg-gold text-white'
+                    : 'bg-white border border-gray-200 text-charcoal-muted hover:border-gold hover:text-gold'
+                }`}
+              >
+                {f}
+                <span className={activeFilter === f ? 'text-white/70 ml-1.5' : 'text-charcoal-muted/50 ml-1.5'}>
+                  {counts[f]}
+                </span>
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {filtered.map((post) => (
               <article
                 key={post.title}
                 className="bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
@@ -161,11 +211,12 @@ export default function NewsPage() {
                   <p className="text-charcoal-muted text-sm leading-relaxed mb-5">{post.excerpt}</p>
                   <div className="flex items-center justify-between gap-3 mt-auto">
                     <span className="text-gold text-xs font-semibold uppercase tracking-wider group-hover:underline">
-                      {post.caseStudy ? 'Read Case Study →' : 'Read Full Article →'}
+                      {isCaseStudy(post) ? 'Read Case Study →' : 'Read Full Article →'}
                     </span>
                     {post.caseStudy && (
                       <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-muted bg-gray-100 px-2 py-1 flex-shrink-0">
-                        <FileText size={11} /> Full Study
+                        <FileText size={11} />
+                        {isCaseStudy(post) ? 'Full Study' : 'Full Release'}
                       </span>
                     )}
                   </div>

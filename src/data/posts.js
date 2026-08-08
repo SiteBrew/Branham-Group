@@ -1,12 +1,19 @@
-// Posts with a `caseStudy` slug open a quick preview modal AND link to a full
-// standalone page at /news/:slug (built for direct LinkedIn sharing).
-// Posts without one are short news items that link out to the source article.
+// Two independent fields:
+//
+//   type       — what the content IS: 'case-study' | 'news'. Drives the
+//                News page filter tabs and sort order (case studies first).
+//
+//   caseStudy  — slug of a full standalone page at /news/:slug, built for
+//                direct LinkedIn sharing. Optional and independent of `type`:
+//                a case study may not have a full page yet (Lumenant), and a
+//                news item may have one (the GASFS press release).
 
 export const posts = [
   {
     date: 'July 2026',
     category: 'Agrivoltaics & Industry Events',
     title: 'Branham Group Attends 2026 Georgia Solar Farm Summit',
+    type: 'news',
     excerpt:
       'Branham Group joined GASFS26 in Athens, GA — engaging with the nation\'s premier agrivoltaics conference and reinforcing its commitment to responsible solar development and land stewardship across the Southeast.',
     img: '/gasfs-2026-hero.png',
@@ -23,6 +30,7 @@ Founded in 1979 and focused on clean energy infrastructure for over 16 years, Br
     date: 'March 18, 2026',
     category: 'Sustainability',
     title: 'Land Trust Alliance Toolkit',
+    type: 'news',
     excerpt:
       'This toolkit will help land trusts engage productively in the regulatory and legislative processes of siting new energy infrastructure in their areas.',
     img: '/land-trust-toolkit.png',
@@ -42,6 +50,7 @@ Founded in 1979 and focused on clean energy infrastructure for over 16 years, Br
     date: 'February 2026',
     category: 'Healthcare & Renewable Energy',
     title: 'Looking to Lead: Healthcare and Environmental Sustainability',
+    type: 'case-study',
     excerpt:
       'Branham Group partnered with a nationally recognized healthcare organization to deploy on-site solar PV — generating over 692,000 kWh annually, offsetting 490 metric tons of CO₂, and projecting $2.5 million in cumulative savings over 25 years.',
     img: '/hospital-array-layout.png',
@@ -58,6 +67,7 @@ The system offsets approximately 490 metric tons of CO₂ annually — equivalen
     date: 'February 2026',
     category: 'Healthcare & Renewable Energy',
     title: 'Branham Group Delivers 8-Site, 1,480kW Solar Portfolio for Lumenant Healthcare',
+    type: 'case-study',
     excerpt:
       'Branham Group executed an 8-location solar energy portfolio for Lumenant across Southeast healthcare facilities — deploying 1,480kW DC of capacity, generating 2,420,000 kWh annually, and offsetting 37,920 tons of CO₂ over the lifetime of the systems.',
     img: '/lumenant-array-layout.jpg',
@@ -73,6 +83,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     date: 'December 23, 2025',
     category: 'Sustainability',
     title: 'Managing Consumer Costs Amidst Rapidly Advancing Technology',
+    type: 'news',
     excerpt:
       '"As technology leaps forward, clear and fair regulations must keep pace to support advancement, help prevent price volatility, and promote competition, ultimately benefiting consumers by keeping electricity costs manageable."',
     img: '/atlas-rooftop-solar.jpg',
@@ -89,6 +100,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     date: 'October 31, 2025',
     category: 'Renewable Energy',
     title: 'Branham Group Selected to Lead Recovery of 1-Megawatt Solar Farm',
+    type: 'news',
     excerpt:
       'Following devastating flood damage from Hurricane Helene in 2024, a regional water resource recovery utility selected Branham Group as the EPC contractor to restore and recover its 1-megawatt on-site solar project.',
     img: '/solar-farm-recovery.jpg',
@@ -112,6 +124,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     date: 'Project Summary',
     category: 'Industrial Infrastructure',
     title: 'Switchyard & Power Distribution Upgrades',
+    type: 'case-study',
     excerpt:
       'Modernizing substation and switchyard infrastructure delivers enhanced reliability and stability, increased capacity and efficiency, and the digital systems required for real-time monitoring, automation, and renewable energy integration.',
     img: '/case-studies/hgm-switchyard-construction.png',
@@ -128,6 +141,7 @@ Technological Advancement and Modernization — Replacing analog equipment with 
     date: 'July 2024',
     category: 'Agriculture & Renewable Energy',
     title: 'Chasing Zero: City Roots Farm Achieves Net-Zero Energy Usage',
+    type: 'case-study',
     excerpt:
       'Through integrated solar PV, closed-loop geothermal, high-efficiency lighting controls, and automated greenhouse systems, City Roots Organic Farm in Columbia, SC met and exceeded its goal of achieving net-zero energy usage.',
     img: '/case-studies/cityroots-aerial-farm.jpg',
@@ -144,6 +158,7 @@ The results were substantial reductions in energy costs, a significant decrease 
     date: 'Project Summary',
     category: 'Industrial Solar',
     title: 'Solar Canopy System for an Industrial Manufacturer in SC',
+    type: 'case-study',
     excerpt:
       'An 81kW DC solar canopy producing 175,392 kWh annually — supplying renewable power while creating functional company and community outdoor space, and offsetting 2,537 tons of CO₂ over its life cycle.',
     img: '/case-studies/scmfg-solar-canopy.jpg',
