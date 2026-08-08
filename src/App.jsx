@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
+import CaseStudyPage from './pages/CaseStudyPage';
 import AffiliationsPage from './pages/AffiliationsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
@@ -15,6 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/:slug" element={<CaseStudyPage />} />
           <Route path="/affiliations" element={<AffiliationsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

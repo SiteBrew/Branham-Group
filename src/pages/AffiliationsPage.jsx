@@ -78,15 +78,15 @@ export default function AffiliationsPage() {
         <meta name="description" content="Branham Group is a Founding Member of Nature at Work SC, a Lowcountry Land Trust 2025 Corporate Partner, and a member of Sustain SC, the SC Chamber of Commerce, SC Solar Council, and Global Charleston." />
         <meta name="keywords" content="Branham Group affiliations, Nature at Work SC Founding Member, Lowcountry Land Trust Corporate Partner, Sustain SC member, SC Solar Council, SC Chamber of Commerce, sustainable EPC contractor South Carolina" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.branhamgroup.com/affiliations" />
+        <link rel="canonical" href="https://www.branham-group.com/affiliations" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.branhamgroup.com/affiliations" />
+        <meta property="og:url" content="https://www.branham-group.com/affiliations" />
         <meta property="og:title" content="Industry Affiliations &amp; Partners | Branham Group" />
-        <meta property="og:description" content="Green Business Benchmark Platinum Certified 2024. Lowcountry Land Trust 2025 Corporate Partner. Member of Sustain SC, SC Solar Council, SC Chamber of Commerce, and Global Charleston." />
-        <meta property="og:image" content="https://www.branhamgroup.com/og-image.jpg" />
+        <meta property="og:description" content="Nature at Work SC Founding Member. Lowcountry Land Trust 2025 Corporate Partner. Member of Sustain SC, SC Solar Council, SC Chamber of Commerce, and Global Charleston." />
+        <meta property="og:image" content="https://www.branham-group.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Industry Affiliations &amp; Partners | Branham Group" />
-        <meta name="twitter:description" content="Green Business Benchmark Platinum Certified. Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council &amp; more." />
+        <meta name="twitter:description" content="Nature at Work SC Founding Member. Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council &amp; more." />
       </Helmet>
 
       {/* Page header */}

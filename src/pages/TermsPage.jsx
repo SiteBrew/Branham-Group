@@ -6,7 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 const sections = [
   {
     title: '1. Acceptance of Terms',
-    body: `By accessing or using the Branham Group, Inc. website located at branhamgroup.com (the "Site"), you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this Site.\n\nBranham Group, Inc. reserves the right to modify these terms at any time. Your continued use of the Site after any changes constitutes your acceptance of the new terms.`,
+    body: `By accessing or using the Branham Group, Inc. website located at branham-group.com (the "Site"), you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this Site.\n\nBranham Group, Inc. reserves the right to modify these terms at any time. Your continued use of the Site after any changes constitutes your acceptance of the new terms.`,
   },
   {
     title: '2. Use of the Site',
@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: '9. Contact Us',
-    body: `If you have questions about these Terms of Use, please contact us:\n\nBranham Group, Inc.\n11 eWall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branhamgroup.com`,
+    body: `If you have questions about these Terms of Use, please contact us:\n\nBranham Group, Inc.\n11 eWall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branham-group.com`,
   },
 ];
 
@@ -53,9 +53,9 @@ export default function TermsPage() {
         <title>Terms of Use | Branham Group, Inc.</title>
         <meta name="description" content="Read Branham Group's Terms of Use governing access to our website. Branham Group is a full-service EPC contractor based in Mount Pleasant, South Carolina." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.branhamgroup.com/terms" />
+        <link rel="canonical" href="https://www.branham-group.com/terms" />
         <meta property="og:title" content="Terms of Use | Branham Group, Inc." />
-        <meta property="og:url" content="https://www.branhamgroup.com/terms" />
+        <meta property="og:url" content="https://www.branham-group.com/terms" />
         <meta property="og:type" content="website" />
       </Helmet>
 

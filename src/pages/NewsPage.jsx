@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, X, FileText } from 'lucide-react';
 import { posts } from '../data/posts';
 
 function linkify(text) {
@@ -62,6 +62,22 @@ function ArticleModal({ post, onClose }) {
               {linkify(para)}
             </p>
           ))}
+
+          {/* Full case study CTA */}
+          {post.caseStudy && (
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <p className="text-charcoal-muted text-sm mb-4">
+                This is a summary. Read the complete case study — full findings, data, project
+                imagery, and downloadable PDF.
+              </p>
+              <Link
+                to={`/news/${post.caseStudy}`}
+                className="inline-flex items-center gap-2 bg-gold hover:brightness-110 text-white text-sm font-semibold px-6 py-3 uppercase tracking-wider transition-all"
+              >
+                <FileText size={16} /> Read Full Case Study <ArrowRight size={16} />
+              </Link>
+            </div>
+          )}
         </div>
       </article>
     </div>
@@ -82,12 +98,12 @@ export default function NewsPage() {
         <meta name="description" content="Stay current with Branham Group's latest news on sustainability, energy siting, and industry insights across South Carolina, North Carolina, Georgia, and Florida. Read about renewable energy policy, healthcare sustainability, and clean energy developments." />
         <meta name="keywords" content="Branham Group news, EPC contractor news South Carolina, solar installation news Southeast, clean energy projects SC NC GA FL, renewable energy contractor updates" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.branhamgroup.com/news" />
+        <link rel="canonical" href="https://www.branham-group.com/news" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.branhamgroup.com/news" />
+        <meta property="og:url" content="https://www.branham-group.com/news" />
         <meta property="og:title" content="News &amp; Insights | Branham Group — EPC Contractor Southeast US" />
         <meta property="og:description" content="Latest project news, sustainability recognition, and clean energy updates from Branham Group — serving SC, NC, GA &amp; FL since 1979." />
-        <meta property="og:image" content="https://www.branhamgroup.com/og-image.jpg" />
+        <meta property="og:image" content="https://www.branham-group.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="News &amp; Insights | Branham Group" />
         <meta name="twitter:description" content="Latest project news and clean energy updates from Branham Group — EPC contractor serving SC, NC, GA &amp; FL." />
@@ -143,8 +159,15 @@ export default function NewsPage() {
                     {post.title}
                   </h2>
                   <p className="text-charcoal-muted text-sm leading-relaxed mb-5">{post.excerpt}</p>
-                  <div className="text-gold text-xs font-semibold uppercase tracking-wider group-hover:underline mt-auto">
-                    Read Full Article →
+                  <div className="flex items-center justify-between gap-3 mt-auto">
+                    <span className="text-gold text-xs font-semibold uppercase tracking-wider group-hover:underline">
+                      {post.caseStudy ? 'Read Case Study →' : 'Read Full Article →'}
+                    </span>
+                    {post.caseStudy && (
+                      <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-charcoal-muted bg-gray-100 px-2 py-1 flex-shrink-0">
+                        <FileText size={11} /> Full Study
+                      </span>
+                    )}
                   </div>
                 </div>
               </article>
