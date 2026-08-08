@@ -94,18 +94,18 @@ export default function NewsPage() {
   return (
     <>
       <Helmet>
-        <title>News &amp; Insights | Branham Group — EPC Contractor Southeast US</title>
+        <title>News &amp; Case Studies | Branham Group — EPC Contractor Southeast US</title>
         <meta name="description" content="Stay current with Branham Group's latest news on sustainability, energy siting, and industry insights across South Carolina, North Carolina, Georgia, and Florida. Read about renewable energy policy, healthcare sustainability, and clean energy developments." />
         <meta name="keywords" content="Branham Group news, EPC contractor news South Carolina, solar installation news Southeast, clean energy projects SC NC GA FL, renewable energy contractor updates" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branham-group.com/news" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.branham-group.com/news" />
-        <meta property="og:title" content="News &amp; Insights | Branham Group — EPC Contractor Southeast US" />
+        <meta property="og:title" content="News &amp; Case Studies | Branham Group — EPC Contractor Southeast US" />
         <meta property="og:description" content="Latest project news, sustainability recognition, and clean energy updates from Branham Group — serving SC, NC, GA &amp; FL since 1979." />
         <meta property="og:image" content="https://www.branham-group.com/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="News &amp; Insights | Branham Group" />
+        <meta name="twitter:title" content="News &amp; Case Studies | Branham Group" />
         <meta name="twitter:description" content="Latest project news and clean energy updates from Branham Group — EPC contractor serving SC, NC, GA &amp; FL." />
       </Helmet>
 
@@ -120,7 +120,7 @@ export default function NewsPage() {
           </Link>
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Latest Updates</p>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
-            News &amp; Insights
+            News &amp; Case Studies
           </h1>
           <p className="text-gray-400 max-w-2xl leading-relaxed">
             Stay current with Branham Group's latest news on sustainability, industry insights,

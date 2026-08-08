@@ -9,7 +9,7 @@ export default function NewsPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <p className="section-label">Latest Updates</p>
-            <h2 className="section-title">News &amp; Insights</h2>
+            <h2 className="section-title">News &amp; Case Studies</h2>
             <p className="text-charcoal-muted max-w-xl mt-4 leading-relaxed">
               Stay current with Branham Group's latest projects, industry recognition,
               and clean energy developments across the Southeast.

@@ -31,7 +31,7 @@ export default function News() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="section-label">Latest Updates</p>
-          <h2 className="section-title">News &amp; Insights</h2>
+          <h2 className="section-title">News &amp; Case Studies</h2>
           <p className="text-charcoal-muted max-w-xl mx-auto mt-4 leading-relaxed">
             Stay current with Branham Group's latest projects, industry recognition,
             and clean energy developments across the Southeast.
