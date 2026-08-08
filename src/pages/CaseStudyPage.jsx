@@ -174,7 +174,8 @@ export default function CaseStudyPage() {
   return (
     <>
       <Helmet>
-        <title>{`${study.title} — ${study.subtitle} | Branham Group`}</title>
+        {/* Short title for SERPs; the longer descriptive one is used for social cards. */}
+        <title>{study.seoTitle}</title>
         <meta name="description" content={study.metaDescription} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={url} />

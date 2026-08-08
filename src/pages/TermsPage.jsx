@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: '9. Contact Us',
-    body: `If you have questions about these Terms of Use, please contact us:\n\nBranham Group, Inc.\n11 eWall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branham-group.com`,
+    body: `If you have questions about these Terms of Use, please contact us:\n\nBranham Group, Inc.\n11 E Wall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branham-group.com`,
   },
 ];
 
@@ -51,7 +51,7 @@ export default function TermsPage() {
     <>
       <Helmet>
         <title>Terms of Use | Branham Group, Inc.</title>
-        <meta name="description" content="Read Branham Group's Terms of Use governing access to our website. Branham Group is a full-service EPC contractor based in Mount Pleasant, South Carolina." />
+        <meta name="description" content="Terms governing access to and use of the Branham Group website, including intellectual property, disclaimers, and limitations of liability." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branham-group.com/terms" />
         <meta property="og:title" content="Terms of Use | Branham Group, Inc." />

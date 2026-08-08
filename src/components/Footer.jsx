@@ -42,7 +42,7 @@ export default function Footer() {
             <address className="space-y-3 text-sm not-italic">
               <div className="flex items-start gap-2">
                 <MapPin size={14} className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true" />
-                <span>11 eWall Street, Mount Pleasant, SC 29464</span>
+                <span>11 E Wall Street, Mount Pleasant, SC 29464</span>
               </div>
                           </address>
             <div className="flex gap-3 mt-6">

@@ -7,6 +7,7 @@ export const caseStudies = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: 'looking-to-lead-healthcare-sustainability',
+    seoTitle: 'Healthcare Solar Case Study | Branham Group',
     kind: 'White Paper',
     industry: 'Healthcare',
     title: 'Looking to Lead',
@@ -17,7 +18,7 @@ export const caseStudies = [
     heroImg: '/case-studies/hospital-solar-sunset.jpg',
     pdf: '/case-studies/BG_Case-Study-Healthcare.pdf',
     metaDescription:
-      'How a nationally recognized healthcare organization deployed on-site solar PV to cut emissions and costs — 692,000+ kWh annually, 490 metric tons of CO₂ offset, and $2.5M in projected lifetime savings.',
+      'How a national healthcare organization cut emissions and costs with on-site solar: 692,000+ kWh a year, 490 tons of CO₂ offset, $2.5M lifetime savings.',
     stats: [
       { value: '692,000+', unit: 'kWh', label: 'Annual Power Production' },
       { value: '$2.5M', unit: '', label: 'Lifetime Savings (25 yr)' },
@@ -177,6 +178,7 @@ export const caseStudies = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: 'chasing-zero-city-roots-farm',
+    seoTitle: 'City Roots Net-Zero Case Study | Branham Group',
     kind: 'White Paper',
     industry: 'Agriculture',
     title: 'Chasing Zero',
@@ -187,7 +189,7 @@ export const caseStudies = [
     heroImg: '/case-studies/cityroots-aerial-farm.jpg',
     pdf: '/case-studies/BG_Case-Study-City-Roots.pdf',
     metaDescription:
-      'How City Roots Farm in Columbia, SC achieved net-zero energy usage through integrated solar PV, geothermal, high-efficiency lighting, and greenhouse controls — a model for sustainable small-scale agriculture.',
+      'How City Roots Farm in Columbia, SC reached net-zero energy with integrated solar PV, closed-loop geothermal, and automated greenhouse controls.',
     stats: [
       { value: 'Net-Zero', unit: '', label: 'Energy Status Achieved' },
       { value: '50%', unit: 'reduction', label: 'Lighting Energy Demand' },
@@ -354,6 +356,7 @@ export const caseStudies = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: 'solar-canopy-sc-manufacturer',
+    seoTitle: 'Solar Canopy Case Study | Branham Group',
     kind: 'Project Summary',
     industry: 'Industrial',
     title: 'Solar (Photovoltaic) Canopy System',
@@ -364,7 +367,7 @@ export const caseStudies = [
     heroImg: '/case-studies/scmfg-solar-canopy.jpg',
     pdf: '/case-studies/BG_SC-Manufacturing-Solar-Summary.pdf',
     metaDescription:
-      'Branham Group designed and built an 81kW DC solar canopy for a South Carolina industrial manufacturer — producing 175,392 kWh annually and offsetting 2,537 tons of CO₂ over its life cycle.',
+      'An 81kW DC solar canopy for a South Carolina manufacturer — 175,392 kWh produced annually and 2,537 tons of CO₂ offset over its life cycle.',
     stats: [
       { value: '81kW DC', unit: '', label: 'System Size' },
       { value: '175,392', unit: 'kWh', label: 'Annual Solar Production' },
@@ -412,6 +415,7 @@ export const caseStudies = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: 'switchyard-power-distribution-upgrades',
+    seoTitle: 'Switchyard Upgrades Case Study | Branham Group',
     kind: 'Project Summary',
     industry: 'Industrial',
     title: 'Switchyard & Power Distribution Upgrades',
@@ -422,7 +426,7 @@ export const caseStudies = [
     heroImg: '/case-studies/hgm-switchyard-construction.png',
     pdf: '/case-studies/BG_Case-Study-HGMSY-Switchyard.pdf',
     metaDescription:
-      'Branham Group switchyard and power distribution upgrades — enhancing reliability and stability, increasing capacity and efficiency, and modernizing industrial electrical infrastructure.',
+      'Switchyard and power distribution upgrades that improve reliability, increase substation capacity, and modernize industrial electrical infrastructure.',
     stats: [
       { value: '24.9kV', unit: '', label: 'Switchyard Voltage' },
       { value: 'Full EPC', unit: '', label: 'Delivery Method' },
@@ -501,6 +505,7 @@ export const caseStudies = [
   // ─────────────────────────────────────────────────────────────
   {
     slug: 'georgia-solar-farm-summit-2026',
+    seoTitle: 'Branham Group at 2026 Georgia Solar Farm Summit',
     kind: 'Press Release',
     industry: 'Agrivoltaics',
     title: 'Branham Group Attends 2026 Georgia Solar Farm Summit',
@@ -511,7 +516,7 @@ export const caseStudies = [
     heroImg: '/gasfs-2026-hero.png',
     pdf: null,
     metaDescription:
-      'Branham Group attended the 2026 Georgia Solar Farm Summit (GASFS26) in Athens, GA — engaging with the nation\'s premier agrivoltaics conference on solar grazing, crop cultivation, pollinator habitat, and ecovoltaics.',
+      'Branham Group at GASFS26 in Athens, GA — the nation\'s premier agrivoltaics conference on solar grazing, crop cultivation, and pollinator habitat.',
     stats: [
       { value: '$70B+', unit: '', label: 'GA Agriculture & Forestry' },
       { value: '25–40', unit: 'years', label: 'Typical Project Lifespan' },

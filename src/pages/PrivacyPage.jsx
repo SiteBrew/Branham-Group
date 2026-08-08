@@ -38,7 +38,7 @@ const sections = [
   },
   {
     title: '9. Contact Us',
-    body: `If you have questions or concerns about this Privacy Policy or our data practices, please contact us:\n\nBranham Group, Inc.\n11 eWall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branham-group.com`,
+    body: `If you have questions or concerns about this Privacy Policy or our data practices, please contact us:\n\nBranham Group, Inc.\n11 E Wall Street\nMount Pleasant, SC 29464\n\nPhone: (843) 823-6078\nEmail: info@branham-group.com`,
   },
 ];
 
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
     <>
       <Helmet>
         <title>Privacy Policy | Branham Group, Inc.</title>
-        <meta name="description" content="Read Branham Group's Privacy Policy. Learn how we collect, use, and protect your personal information when you visit our website or contact us about EPC services in South Carolina and the Southeast." />
+        <meta name="description" content="How Branham Group collects, uses, and protects your personal information when you visit our website or contact us about a project." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branham-group.com/privacy" />
         <meta property="og:title" content="Privacy Policy | Branham Group, Inc." />

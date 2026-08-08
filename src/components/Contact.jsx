@@ -37,7 +37,7 @@ export default function Contact() {
                 <div>
                   <div className="text-white font-semibold mb-1">Address</div>
                   <address className="text-gray-400 text-sm leading-relaxed not-italic">
-                    11 eWall Street<br />
+                    11 E Wall Street<br />
                     Mount Pleasant, SC 29464
                   </address>
                 </div>

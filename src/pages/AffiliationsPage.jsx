@@ -74,8 +74,8 @@ export default function AffiliationsPage() {
   return (
     <>
       <Helmet>
-        <title>Industry Affiliations &amp; Partners | Branham Group — EPC Contractor SC</title>
-        <meta name="description" content="Branham Group is a Founding Member of Nature at Work SC, a Lowcountry Land Trust 2025 Corporate Partner, and a member of Sustain SC, the SC Chamber of Commerce, SC Solar Council, and Global Charleston." />
+        <title>Industry Affiliations &amp; Partners | Branham Group</title>
+        <meta name="description" content="Nature at Work SC Founding Member and Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council, and the SC Chamber of Commerce." />
         <meta name="keywords" content="Branham Group affiliations, Nature at Work SC Founding Member, Lowcountry Land Trust Corporate Partner, Sustain SC member, SC Solar Council, SC Chamber of Commerce, sustainable EPC contractor South Carolina" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.branham-group.com/affiliations" />
