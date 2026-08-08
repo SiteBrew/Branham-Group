@@ -1,13 +1,72 @@
-import { MapPin, Mail } from 'lucide-react';
+import { MapPin, Mail, AlertCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
+
+// Web3Forms delivers submissions straight to the address the key is registered
+// to (info@branham-group.com). The key is safe to expose — it only permits
+// posting to that one inbox — but it lives in an env var so it can be rotated
+// without a code change. Set VITE_WEB3FORMS_KEY in Vercel.
+const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+const CONTACT_EMAIL = 'info@branham-group.com';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (sending) return;
+
+    // Honeypot: bots fill hidden fields, humans can't see them.
+    if (e.target.botcheck?.checked) return;
+
+    // If the key was never configured, fail loudly to the visitor with a working
+    // fallback rather than pretending the message sent.
+    if (!ACCESS_KEY) {
+      console.error(
+        'VITE_WEB3FORMS_KEY is not set — contact form cannot send. Add it in Vercel > Settings > Environment Variables.'
+      );
+      setError('The contact form is temporarily unavailable. Please email us directly at');
+      return;
+    }
+
+    setSending(true);
+    setError(null);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `New project inquiry from ${form.name} — branham-group.com`,
+          from_name: 'Branham Group Website',
+          // Lets Jarrett hit Reply and reach the prospect directly.
+          replyto: form.email,
+          name: form.name,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+      // Success is top-level; the detail message is nested under `body`.
+      if (!data.success) {
+        throw new Error(data.body?.message || data.message || 'Submission failed');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      // Never swallow the failure — a silently lost lead is the worst outcome.
+      console.error('Contact form submission failed:', err);
+      setError(
+        'Something went wrong sending your message. Please email us directly and we\'ll respond right away.'
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -91,7 +150,17 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Honeypot — hidden from users, catches automated spam. */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="contact-name" className="block text-xs text-gray-400 uppercase tracking-wider mb-2">
@@ -149,11 +218,36 @@ export default function Contact() {
                     placeholder="Tell us about your project — scope, timeline, location, and any specific requirements..."
                   />
                 </div>
+                {error && (
+                  <div
+                    role="alert"
+                    className="flex items-start gap-3 bg-red-500/10 border border-red-500/30 p-4"
+                  >
+                    <AlertCircle size={18} className="text-red-400 flex-shrink-0 mt-0.5" />
+                    <div className="text-sm text-red-200 leading-relaxed">
+                      {error}{' '}
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        className="text-gold underline hover:brightness-110 font-semibold"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
+                    </div>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-gold text-white py-4 font-semibold uppercase tracking-wider text-sm hover:bg-gold-dark transition-colors duration-200"
+                  disabled={sending}
+                  className="w-full bg-gold text-white py-4 font-semibold uppercase tracking-wider text-sm hover:bg-gold-dark transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Send Message
+                  {sending ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" /> Sending…
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </button>
               </form>
             )}
