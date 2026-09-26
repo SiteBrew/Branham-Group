@@ -46,7 +46,7 @@ const esc = (s = '') =>
  * `socialTitle` is the longer descriptive headline — social cards allow far
  * more room, so we don't want to waste it on the truncated version.
  */
-function headFor({ url, title, socialTitle, description, image, ogType, robots, jsonLd }) {
+function headFor({ url, title, socialTitle, description, image, ogType, robots, jsonLd, preloadImage }) {
   const social = socialTitle || title;
   const tags = [
     `<title>${esc(title)}</title>`,
@@ -70,6 +70,21 @@ function headFor({ url, title, socialTitle, description, image, ogType, robots, 
     `<meta name="twitter:image" content="${esc(image)}" />`,
   ];
 
+  /*
+   * LCP preload, per route. The hero is a CSS background-image, so the browser
+   * cannot discover it until the stylesheet parses — by then it is queued
+   * behind a dozen other images. Preloading starts the request with the HTML.
+   *
+   * Deliberately per-route rather than in the shared template: each page has a
+   * different hero, and preloading the homepage's image on a case study would
+   * download a file that page never displays.
+   */
+  if (preloadImage) {
+    tags.unshift(
+      `<link rel="preload" as="image" href="${esc(preloadImage)}" type="image/webp" fetchpriority="high" />`
+    );
+  }
+
   if (jsonLd) {
     tags.push(
       `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`
@@ -91,6 +106,7 @@ function collectRoutes() {
       image: meta.image ? `${SITE}${meta.image}` : DEFAULT_OG_IMAGE,
       ogType: meta.ogType,
       robots: meta.robots,
+      preloadImage: meta.preloadImage,
     });
   }
 
@@ -109,6 +125,7 @@ function collectRoutes() {
       description: cs.metaDescription,
       image,
       ogType: 'article',
+      preloadImage: cs.heroImg,
       jsonLd: {
         '@context': 'https://schema.org',
         '@graph': [

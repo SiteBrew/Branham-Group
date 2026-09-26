@@ -11,6 +11,8 @@ export const DEFAULT_OG_IMAGE = `${SITE}/og-image.jpg`;
 
 export const routeMeta = {
   '/': {
+    // LCP element on the homepage — see preload handling in prerender.mjs.
+    preloadImage: '/brownfield-solar-1.webp',
     title: 'Branham Group | EPC Contractor — SC, NC, GA & FL',
     description:
       'Full-service EPC contractor since 1979. Solar, design-build, construction management, and resilient infrastructure across SC, NC, GA, and FL.',
