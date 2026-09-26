@@ -197,4 +197,55 @@ for (const r of routes) {
   console.log(`[prerender] ${r.route.padEnd(46)} -> ${path.relative(DIST, path.join(outDir, 'index.html'))}`);
 }
 
+/*
+ * Branded 404.
+ *
+ * Until now vercel.json rewrote EVERY unmatched path to the SPA shell, so old
+ * WordPress URLs still in Google's index — and any typo — returned HTTP 200
+ * with the homepage's meta tags and an empty body. That is a soft 404: Google
+ * treats those URLs as live duplicates of the homepage and keeps spending
+ * crawl budget on them.
+ *
+ * The catch-all rewrite is gone (every real route is prerendered to a real
+ * file, so nothing needs it), which means Vercel now serves this file with a
+ * genuine 404 status. Deliberately plain static HTML rather than the SPA shell
+ * — a 404 should not depend on a 390 KB JS bundle booting successfully.
+ */
+const notFound = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Branham Group</title>
+    <meta name="robots" content="noindex, follow" />
+    <style>
+      :root { color-scheme: dark }
+      body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+             background:#1a1a1a; color:#e8e8e8; font-family:system-ui,-apple-system,sans-serif;
+             text-align:center; padding:2rem }
+      .w { max-width:34rem }
+      h1 { font-size:clamp(1.75rem,5vw,2.5rem); margin:0 0 .75rem; font-weight:800; letter-spacing:-.02em }
+      p { color:#9a9a9a; line-height:1.7; margin:0 0 2rem }
+      .links { display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center }
+      a { display:inline-block; padding:.85rem 1.6rem; border-radius:2px; text-decoration:none;
+          font-size:.875rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase }
+      .primary { background:#c8a45c; color:#1a1a1a }
+      .secondary { border:1px solid rgba(255,255,255,.2); color:#e8e8e8 }
+    </style>
+  </head>
+  <body>
+    <div class="w">
+      <h1>We couldn&rsquo;t find that page</h1>
+      <p>The link may be out of date, or the page may have moved when we rebuilt the site. Our project case studies and latest news are all still here.</p>
+      <div class="links">
+        <a class="primary" href="/news">News &amp; Case Studies</a>
+        <a class="secondary" href="/">Home</a>
+      </div>
+    </div>
+  </body>
+</html>
+`;
+fs.writeFileSync(path.join(DIST, '404.html'), notFound, 'utf8');
+console.log('[prerender] 404.html                                       -> 404.html');
+
 console.log(`[prerender] ${written} routes prerendered with static meta tags.`);

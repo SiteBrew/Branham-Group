@@ -1,5 +1,38 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "redirects": [
+    {
+      "source": "/branham-group-partners-with-city-roots-farm",
+      "destination": "/news/chasing-zero-city-roots-farm",
+      "permanent": true
+    },
+    {
+      "source": "/nucor-solar-photovoltaic-canopy-system",
+      "destination": "/news/solar-canopy-sc-manufacturer",
+      "permanent": true
+    },
+    {
+      "source": "/branham-group-partners-with-lumenant-to-provide-sustainable-energy-sources-in-healthcare",
+      "destination": "/news/looking-to-lead-healthcare-sustainability",
+      "permanent": true
+    },
+    {
+      "source": "/branham-group-announces-partnership-with-lumenant",
+      "destination": "/news/looking-to-lead-healthcare-sustainability",
+      "permanent": true
+    },
+    {
+      "source": "/sustainability-goals",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/04/NUCOR-Summary-Page-2.pdf",
+      "destination": "/news/solar-canopy-sc-manufacturer",
+      "permanent": true
+    },
+    { "source": "/wp-content/(.*)", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/(.*)", "destination": "/", "permanent": true },
+    { "source": "/category/(.*)", "destination": "/news", "permanent": true },
+    { "source": "/tag/(.*)", "destination": "/news", "permanent": true }
   ]
 }
