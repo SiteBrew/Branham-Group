@@ -16,7 +16,7 @@ export const posts = [
     type: 'news',
     excerpt:
       'Branham Group joined GASFS26 in Athens, GA — engaging with the nation\'s premier agrivoltaics conference and reinforcing its commitment to responsible solar development and land stewardship across the Southeast.',
-    img: '/gasfs-2026-hero.png',
+    img: '/gasfs-2026-hero.webp',
     caseStudy: 'georgia-solar-farm-summit-2026',
     body: `The Branham Group team attended the 2026 Georgia Solar Farm Summit (GASFS26), held July 15–16 at The Georgia Center on the University of Georgia campus in Athens, GA. Organized by Solar Farm Summit LLC, the summit convenes leading interdisciplinary practitioners across energy, agriculture, planning, and research to advance responsible solar development, land conservation, and farm viability.
 
@@ -33,7 +33,7 @@ Founded in 1979 and focused on clean energy infrastructure for over 16 years, Br
     type: 'news',
     excerpt:
       'This toolkit will help land trusts engage productively in the regulatory and legislative processes of siting new energy infrastructure in their areas.',
-    img: '/land-trust-toolkit.png',
+    img: '/land-trust-toolkit.webp',
     body: [
       'This toolkit will help land trusts engage productively in the regulatory and legislative processes of siting new energy infrastructure in their areas.',
       '',
@@ -53,7 +53,7 @@ Founded in 1979 and focused on clean energy infrastructure for over 16 years, Br
     type: 'case-study',
     excerpt:
       'Branham Group partnered with a nationally recognized healthcare organization to deploy on-site solar PV — generating over 692,000 kWh annually, offsetting 490 metric tons of CO₂, and projecting $2.5 million in cumulative savings over 25 years.',
-    img: '/hospital-array-layout.png',
+    img: '/hospital-array-layout.webp',
     caseStudy: 'looking-to-lead-healthcare-sustainability',
     body: `U.S. healthcare systems are among the nation's most energy-intensive organizations, accounting for approximately 9% of total domestic carbon emissions. Globally, the U.S. healthcare sector represents 27% of the total healthcare carbon footprint — ranking it as the 13th largest carbon emitter in the world if it were a country.
 
@@ -70,7 +70,7 @@ The system offsets approximately 490 metric tons of CO₂ annually — equivalen
     type: 'case-study',
     excerpt:
       'Branham Group executed an 8-location solar energy portfolio for Lumenant across Southeast healthcare facilities — deploying 1,480kW DC of capacity, generating 2,420,000 kWh annually, and offsetting 37,920 tons of CO₂ over the lifetime of the systems.',
-    img: '/lumenant-array-layout.jpg',
+    img: '/lumenant-array-layout.webp',
     body: `Lumenant, a Southeast-based clean energy solutions provider serving the healthcare industry, engaged Branham Group to design and deploy a large-scale solar energy portfolio across 8 healthcare facilities. The result is one of the most significant on-site renewable energy commitments in the region's healthcare sector.
 
 Each of the 8 sites received a custom-engineered 185kW DC ground-mount solar array, with Branham Group managing the complete EPC scope — site layout engineering, structural installation, electrical integration, utility interconnection, permitting, and commissioning — across all locations. The combined portfolio totals 1,480kW DC of installed capacity and is projected to generate 2,420,000 kilowatt-hours of clean electricity annually.
@@ -86,7 +86,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     type: 'news',
     excerpt:
       '"As technology leaps forward, clear and fair regulations must keep pace to support advancement, help prevent price volatility, and promote competition, ultimately benefiting consumers by keeping electricity costs manageable."',
-    img: '/atlas-rooftop-solar.jpg',
+    img: '/atlas-rooftop-solar.webp',
     body: [
       '"As technology leaps forward, clear and fair regulations must keep pace to support advancement, help prevent price volatility, and promote competition, ultimately benefiting consumers by keeping electricity costs manageable."',
       '',
@@ -103,7 +103,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     type: 'news',
     excerpt:
       'Following devastating flood damage from Hurricane Helene in 2024, a regional water resource recovery utility selected Branham Group as the EPC contractor to restore and recover its 1-megawatt on-site solar project.',
-    img: '/solar-farm-recovery.jpg',
+    img: '/solar-farm-recovery.webp',
     body: [
       'Branham Group, Inc. Selected to Lead Recovery of 1-Megawatt Solar Farm for Regional Water Resource Recovery Utility',
       '',
@@ -127,7 +127,7 @@ Branham Group's ability to manage a complex, multi-site deployment across active
     type: 'case-study',
     excerpt:
       'Modernizing substation and switchyard infrastructure delivers enhanced reliability and stability, increased capacity and efficiency, and the digital systems required for real-time monitoring, automation, and renewable energy integration.',
-    img: '/case-studies/hgm-switchyard-construction.png',
+    img: '/case-studies/hgm-switchyard-construction.webp',
     caseStudy: 'switchyard-power-distribution-upgrades',
     body: `Switchyard and power distribution upgrades address three core objectives for industrial facilities: reliability, capacity, and modernization.
 
@@ -144,7 +144,7 @@ Technological Advancement and Modernization — Replacing analog equipment with 
     type: 'case-study',
     excerpt:
       'Through integrated solar PV, closed-loop geothermal, high-efficiency lighting controls, and automated greenhouse systems, City Roots Organic Farm in Columbia, SC met and exceeded its goal of achieving net-zero energy usage.',
-    img: '/case-studies/cityroots-aerial-farm.jpg',
+    img: '/case-studies/cityroots-aerial-farm.webp',
     caseStudy: 'chasing-zero-city-roots-farm',
     body: `City Roots Organic Farm in Columbia, South Carolina initially relied on conventional grid electricity and fossil fuels for its operations. A new operations facility increased Scope 1 and Scope 2 emissions tenfold, while rising energy costs and national client sustainability requirements prompted the farm to explore alternative energy solutions.
 
@@ -161,7 +161,7 @@ The results were substantial reductions in energy costs, a significant decrease 
     type: 'case-study',
     excerpt:
       'An 81kW DC solar canopy producing 175,392 kWh annually — supplying renewable power while creating functional company and community outdoor space, and offsetting 2,537 tons of CO₂ over its life cycle.',
-    img: '/case-studies/scmfg-solar-canopy.jpg',
+    img: '/case-studies/scmfg-solar-canopy.webp',
     caseStudy: 'solar-canopy-sc-manufacturer',
     body: `Focused on sustainability and with a corporate goal of achieving net-zero emissions by 2050, a prominent manufacturer in South Carolina has invested in an on-site renewable energy project. The solar canopy not only supplies a portion of their facility's renewable power needs but also aligns with their biodiversity standards, which encompass community outreach and ongoing conservation efforts.
 

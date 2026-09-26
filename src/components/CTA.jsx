@@ -6,7 +6,7 @@ export default function CTA() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `url('/branham-corporate-interior.jpg')`,
+          backgroundImage: `url('/branham-office.webp')`,
           filter: 'brightness(0.88)',
         }}
         role="img"

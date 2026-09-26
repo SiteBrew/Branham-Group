@@ -10,9 +10,9 @@ const projects = [
     tag: 'Agriculture',
     tagColor: 'bg-green-100 text-green-800',
     location: 'Columbia, SC',
-    img: '/cityroots-aerial.jpg',
-    heroImg: '/cityroots-sunset.jpg',
-    gallery: ['/cityroots-aerial.jpg', '/cityroots-sunset.jpg', '/cityroots-greenhouse.jpg', '/cityroots-commissioning.jpg', '/cityroots-new-1.jpg', '/cityroots-new-2.jpg', '/cityroots-new-3.jpg', '/cityroots-new-4.jpg'],
+    img: '/cityroots-aerial.webp',
+    heroImg: '/cityroots-sunset.webp',
+    gallery: ['/cityroots-aerial.webp', '/cityroots-sunset.webp', '/cityroots-greenhouse.webp', '/cityroots-commissioning.webp', '/cityroots-new-1.webp', '/cityroots-new-2.webp', '/cityroots-new-3.webp', '/cityroots-new-4.webp'],
     summary:
       'By integrating solar power and geothermal energy, the microgreens farm achieved net-zero energy usage, demonstrating that renewable energy adoption is both feasible and beneficial for small-scale agricultural operations.',
     overview:
@@ -43,9 +43,9 @@ const projects = [
     tag: 'Industrial',
     tagColor: 'bg-blue-100 text-blue-800',
     location: 'South Carolina',
-    img: '/nucor-exterior.png',
-    heroImg: '/nucor-interior.jpg',
-    gallery: ['/nucor-exterior.png', '/nucor-interior.jpg', '/nucor-commissioning.jpg', '/nucor-new-1.jpg', '/nucor-new-2.jpg', '/nucor-new-3.jpg', '/nucor-new-4.png'],
+    img: '/nucor-exterior.webp',
+    heroImg: '/nucor-interior.webp',
+    gallery: ['/nucor-exterior.webp', '/nucor-interior.webp', '/nucor-commissioning.webp', '/nucor-new-1.webp', '/nucor-new-2.webp', '/nucor-new-3.webp', '/nucor-new-4.webp'],
     summary:
       'The solar canopy generates renewable energy and additionally provides functional company and community outdoor space. From daily employee gatherings to corporate events, the canopy space contributes to a positive corporate culture. The solar canopy and the renewable energy it generates support Nucor\'s commitment to sourcing diverse, clean energy for its circular steelmaking operations.',
     overview:
@@ -76,9 +76,9 @@ const projects = [
     tag: 'Commercial',
     tagColor: 'bg-yellow-100 text-yellow-800',
     location: 'Southeast United States',
-    img: '/lumenant-array-layout.jpg',
-    heroImg: '/lumenant-array-layout.jpg',
-    gallery: ['/lumenant-array-layout.jpg', '/lumenant-new-1.jpg'],
+    img: '/lumenant-array-layout.webp',
+    heroImg: '/lumenant-array-layout.webp',
+    gallery: ['/lumenant-array-layout.webp', '/lumenant-new-1.webp'],
     summary:
       'The portfolio of on-site renewable energy projects was created to reduce carbon footprint, lower utility costs, improve energy security, and enhance resilience, ultimately contributing to a cleaner and healthier environment.',
     overview:
@@ -109,9 +109,9 @@ const projects = [
     tag: 'Mining',
     tagColor: 'bg-orange-100 text-orange-800',
     location: 'Haile Gold Mine, SC',
-    img: '/oceana-ro-1.jpg',
-    heroImg: '/oceana-ro-1.jpg',
-    gallery: ['/oceana-ro-1.jpg', '/oceana-ro-2.jpg', '/oceana-ro-3.jpg', '/oceana-ro-4.jpg'],
+    img: '/oceana-ro-1.webp',
+    heroImg: '/oceana-ro-1.webp',
+    gallery: ['/oceana-ro-1.webp', '/oceana-ro-2.webp', '/oceana-ro-3.webp', '/oceana-ro-4.webp'],
     summary:
       'Reverse osmosis (R.O.) plants are crucial in industrial operations for providing purified water with low levels of contaminants, which helps reduce equipment wear and extend the lifespan of critical infrastructure. The scope of work includes concrete foundations, rebar fabrication, excavation, and ensuring sustainability through efficient construction and wastewater recycling.',
     overview:
@@ -142,9 +142,9 @@ const projects = [
     tag: 'Healthcare',
     tagColor: 'bg-pink-100 text-pink-800',
     location: 'Southeast United States',
-    img: '/healthcare-array-layout.png',
-    heroImg: '/healthcare-array-layout.png',
-    gallery: ['/healthcare-array-layout.png'],
+    img: '/healthcare-array-layout.webp',
+    heroImg: '/healthcare-array-layout.webp',
+    gallery: ['/healthcare-array-layout.webp'],
     summary:
       'A Southeast healthcare system targeting 50% Scope 1 & 2 emissions reduction by 2030 partnered with Branham Group for an on-site solar installation generating 692,000+ kWh annually — delivering $2.5M in projected lifetime savings and offsetting 490 metric tons of CO₂ per year.',
     overview:
@@ -175,9 +175,9 @@ const projects = [
     tag: 'Utility',
     tagColor: 'bg-purple-100 text-purple-800',
     location: 'South Carolina',
-    img: '/hgm-1.jpg',
-    heroImg: '/hgm-1.jpg',
-    gallery: ['/hgm-1.jpg', '/hgm-2.jpg', '/hgm-3.jpg', '/hgm-4.jpg'],
+    img: '/hgm-1.webp',
+    heroImg: '/hgm-1.webp',
+    gallery: ['/hgm-1.webp', '/hgm-2.webp', '/hgm-3.webp', '/hgm-4.webp'],
     summary:
       'A new switchyard engineered to enhance the client\'s electrical distribution network — increasing reliability, expanding capacity, and futureproofing the facility\'s power infrastructure.',
     overview:

@@ -5,7 +5,7 @@ const posts = [
     title: 'Branham Group Commissions 500kW Rooftop Solar Array for Regional Manufacturer',
     excerpt:
       'Our team successfully commissioned a 500-kilowatt rooftop solar installation for a regional manufacturing facility in South Carolina, offsetting over 60% of annual energy consumption and delivering strong ROI from day one.',
-    img: '/atlas-rooftop-solar.jpg',
+    img: '/atlas-rooftop-solar.webp',
   },
   {
     date: 'February 2025',
@@ -13,7 +13,7 @@ const posts = [
     title: 'New Industrial Water Treatment Facility Opens in the Lowcountry',
     excerpt:
       'A multi-year infrastructure project reaches completion, delivering advanced water purification capabilities to a growing industrial park outside Charleston — built to the highest environmental compliance standards.',
-    img: '/brownfield-solar-2.jpg',
+    img: '/brownfield-solar-2.webp',
   },
   {
     date: 'December 2024',
@@ -21,7 +21,7 @@ const posts = [
     title: 'Branham Group Recognized for Decades of Sustainable Construction Leadership',
     excerpt:
       'Honored by regional business leaders for sustained commitment to environmental responsibility, Branham Group accepted an award recognizing its pioneering role in bringing renewable energy EPC services to South Carolina.',
-    img: '/solar-sunset-racking.jpg',
+    img: '/solar-sunset-racking.webp',
   },
 ];
 

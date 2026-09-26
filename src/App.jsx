@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -23,6 +24,14 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      {/*
+        Until now the site recorded nothing at all — no analytics of any kind
+        were installed, which is why there is no traffic history to report.
+        Vercel Analytics is cookieless and needs no consent banner, so it can
+        go live without a legal review. It only starts collecting from the
+        moment this deploys; it cannot backfill.
+      */}
+      <Analytics />
     </div>
   );
 }

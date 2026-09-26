@@ -15,7 +15,7 @@ export const caseStudies = [
     deck: 'How a National Healthcare Organization is Using Renewable Energy to Reduce Costs and Emissions',
     date: 'February 2026',
     byline: 'By Branham Group, Inc.',
-    heroImg: '/case-studies/hospital-solar-sunset.jpg',
+    heroImg: '/case-studies/hospital-solar-sunset.webp',
     pdf: '/case-studies/BG_Case-Study-Healthcare.pdf',
     metaDescription:
       'How a national healthcare organization cut emissions and costs with on-site solar: 692,000+ kWh a year, 490 tons of CO₂ offset, $2.5M lifetime savings.',
@@ -68,7 +68,7 @@ export const caseStudies = [
       },
       {
         type: 'image',
-        src: '/case-studies/hospital-hardhat-field.jpg',
+        src: '/case-studies/hospital-hardhat-field.webp',
         alt: 'Branham Group hard hat on site at the hospital campus solar project',
         caption: 'The project site prior to construction — a former open field adjacent to the hospital campus.',
       },
@@ -103,7 +103,7 @@ export const caseStudies = [
       },
       {
         type: 'image',
-        src: '/case-studies/hospital-array-diagram.png',
+        src: '/case-studies/hospital-array-diagram.webp',
         alt: 'Engineered array layout showing the solar field, point of interconnection, and site boundaries',
         caption: 'Array layout — the engineered site plan showing panel rows, point of interconnection, disconnects, and silt fence.',
         contain: true,
@@ -147,7 +147,7 @@ export const caseStudies = [
       },
       {
         type: 'image',
-        src: '/case-studies/hospital-window-view.jpg',
+        src: '/case-studies/hospital-window-view.webp',
         alt: 'View from inside the hospital looking out onto a landscaped stream and green space',
         caption: 'Healthier places and healthier people — the environment patients experience is part of the outcome.',
       },
@@ -186,7 +186,7 @@ export const caseStudies = [
     deck: 'From Seed to Sustainability: Achieving Net-Zero Energy Usage for an Organic Leafy Greens Farm',
     date: 'July 2024',
     byline: 'By Jarrett Branham, Brandy Freeling, and Eric McClam',
-    heroImg: '/case-studies/cityroots-aerial-farm.jpg',
+    heroImg: '/case-studies/cityroots-aerial-farm.webp',
     pdf: '/case-studies/BG_Case-Study-City-Roots.pdf',
     metaDescription:
       'How City Roots Farm in Columbia, SC reached net-zero energy with integrated solar PV, closed-loop geothermal, and automated greenhouse controls.',
@@ -329,7 +329,7 @@ export const caseStudies = [
       },
       {
         type: 'image',
-        src: '/case-studies/cityroots-solar-dusk.jpg',
+        src: '/case-studies/cityroots-solar-dusk.webp',
         alt: 'The City Roots solar array at dusk with the greenhouse lit in the background',
         caption: 'Onsite generation at dusk — energy independence for a year-round growing operation.',
       },
@@ -364,7 +364,7 @@ export const caseStudies = [
     deck: 'An 81kW DC solar canopy delivering renewable power, community gathering space, and measurable environmental return.',
     date: 'Project Summary',
     byline: 'Branham Group, Inc.',
-    heroImg: '/case-studies/scmfg-solar-canopy.jpg',
+    heroImg: '/case-studies/scmfg-solar-canopy.webp',
     pdf: '/case-studies/BG_SC-Manufacturing-Solar-Summary.pdf',
     metaDescription:
       'An 81kW DC solar canopy for a South Carolina manufacturer — 175,392 kWh produced annually and 2,537 tons of CO₂ offset over its life cycle.',
@@ -385,7 +385,7 @@ export const caseStudies = [
       },
       {
         type: 'image',
-        src: '/case-studies/scmfg-solar-canopy.jpg',
+        src: '/case-studies/scmfg-solar-canopy.webp',
         alt: 'The completed solar canopy structure providing covered outdoor space at the manufacturing facility',
         caption: 'The completed canopy — renewable generation overhead, functional gathering space below.',
       },
@@ -423,7 +423,7 @@ export const caseStudies = [
     deck: 'Modernizing substation and switchyard infrastructure for reliability, capacity, and grid readiness.',
     date: 'Project Summary',
     byline: 'Branham Group, Inc.',
-    heroImg: '/case-studies/hgm-switchyard-construction.png',
+    heroImg: '/case-studies/hgm-switchyard-construction.webp',
     pdf: '/case-studies/BG_Case-Study-HGMSY-Switchyard.pdf',
     metaDescription:
       'Switchyard and power distribution upgrades that improve reliability, increase substation capacity, and modernize industrial electrical infrastructure.',
@@ -436,7 +436,7 @@ export const caseStudies = [
     sections: [
       {
         type: 'image',
-        src: '/case-studies/hgm-switchyard-construction.png',
+        src: '/case-studies/hgm-switchyard-construction.webp',
         alt: 'Structural steel being erected for the new switchyard during construction',
         caption: 'Structural steel erection during switchyard construction.',
       },
@@ -513,7 +513,7 @@ export const caseStudies = [
     deck: 'Southeast EPC leader engages with nation\'s premier agrivoltaics conference, reinforcing commitment to responsible solar development and land stewardship.',
     date: 'July 18, 2026',
     byline: 'Branham Group, Inc.',
-    heroImg: '/gasfs-2026-hero.png',
+    heroImg: '/gasfs-2026-hero.webp',
     pdf: null,
     metaDescription:
       'Branham Group at GASFS26 in Athens, GA — the nation\'s premier agrivoltaics conference on solar grazing, crop cultivation, and pollinator habitat.',

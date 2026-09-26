@@ -7,7 +7,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/brownfield-solar-1.jpg')`,
+          backgroundImage: `url('/brownfield-solar-1.webp')`,
         }}
         role="img"
         aria-label="Large-scale ground-mount solar installation by Branham Group on a redeveloped site in the Southeast"

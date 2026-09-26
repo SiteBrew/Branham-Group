@@ -33,7 +33,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-5">
-              <img src="/logo-white.png" alt="Branham Group — EPC Services" className="h-28 w-auto" style={{ mixBlendMode: 'screen' }} />
+              <img src="/logo-white.webp" alt="Branham Group — EPC Services" className="h-28 w-auto" style={{ mixBlendMode: 'screen' }} />
             </div>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
               Full-service Engineering, Procurement, and Construction company dedicated to

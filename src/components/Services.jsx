@@ -5,25 +5,25 @@ const services = [
     icon: ClipboardList,
     title: 'Preconstruction Services',
     desc: 'We lay the groundwork before a shovel hits the dirt. Our preconstruction team delivers detailed cost estimating, site analysis, scheduling, value engineering, and constructability reviews — setting every project up for on-time, on-budget execution.',
-    img: '/preconstruction-array-layout.jpg',
+    img: '/preconstruction-array-layout.webp',
   },
   {
     icon: HardHat,
     title: 'Construction Management',
     desc: 'From mobilization through final commissioning, our construction managers coordinate every trade, schedule, and resource on site. We maintain strict quality control and safety standards to deliver projects that perform exactly as designed.',
-    img: '/construction-management.png',
+    img: '/construction-management.webp',
   },
   {
     icon: Layers,
     title: 'Engineering, Procurement & Construction',
     desc: 'Our full EPC capability means a single point of accountability from concept to completion. We manage engineering, sourcing, and field construction under one contract — eliminating gaps, reducing risk, and delivering integrated results.',
-    img: '/solar-sunset-racking.jpg',
+    img: '/solar-sunset-racking.webp',
   },
   {
     icon: PenTool,
     title: 'Design-Build',
     desc: 'Speed and efficiency without sacrificing quality. Our design-build approach integrates architecture, engineering, and construction into a single, streamlined process — reducing project timelines and giving owners greater cost certainty from day one.',
-    img: '/design-build.jpg',
+    img: '/design-build.webp',
   },
 ];
 
