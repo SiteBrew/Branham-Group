@@ -64,7 +64,16 @@ function stripHoistedHead(markup) {
   return markup
     .replace(/<title>[\s\S]*?<\/title>/g, '')
     .replace(/<meta\b[^>]*\/?>/g, '')
-    .replace(/<link\b[^>]*\/?>/g, '');
+    .replace(/<link\b[^>]*\/?>/g, '')
+    /*
+     * CaseStudyPage renders its own Article JSON-LD through Helmet. headFor()
+     * already emits Article + BreadcrumbList for those routes, so leaving this
+     * in the body shipped the same Article twice per page.
+     */
+    .replace(
+      /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/g,
+      ''
+    );
 }
 
 /**
