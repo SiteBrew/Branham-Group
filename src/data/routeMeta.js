@@ -25,6 +25,12 @@ export const routeMeta = {
     ogType: 'website',
   },
   '/affiliations': {
+    /*
+     * Its own card image rather than the site default — the page is about the
+     * Nature at Work founding membership, and a generic site image made every
+     * share of it look like a share of the homepage.
+     */
+    image: '/og-affiliations.jpg',
     title: 'Industry Affiliations & Partners | Branham Group',
     description:
       'Nature at Work SC Founding Member and Lowcountry Land Trust Corporate Partner. Member of Sustain SC, SC Solar Council, and the SC Chamber of Commerce.',

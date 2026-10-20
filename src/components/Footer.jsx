@@ -9,11 +9,15 @@ const links = {
     { label: 'Affiliations', href: '/affiliations', isPage: true },
     { label: 'Contact', href: '/#contact' },
   ],
+  /*
+   * These four pointed at the same /#services anchor, so the column was four
+   * links to one destination. Each now goes to its own page.
+   */
   Services: [
-    { label: 'Preconstruction', href: '/#services' },
-    { label: 'Construction Management', href: '/#services' },
-    { label: 'EPC', href: '/#services' },
-    { label: 'Design-Build', href: '/#services' },
+    { label: 'Preconstruction', href: '/services/preconstruction', isPage: true },
+    { label: 'Construction Management', href: '/services/construction-management', isPage: true },
+    { label: 'EPC', href: '/services/epc', isPage: true },
+    { label: 'Design-Build', href: '/services/design-build', isPage: true },
   ],
   Markets: [
     { label: 'Commercial', href: '/#markets' },

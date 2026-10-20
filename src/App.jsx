@@ -8,6 +8,7 @@ import CaseStudyPage from './pages/CaseStudyPage';
 import AffiliationsPage from './pages/AffiliationsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import ServicePage from './pages/ServicePage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:slug" element={<CaseStudyPage />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/affiliations" element={<AffiliationsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

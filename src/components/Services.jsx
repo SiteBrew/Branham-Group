@@ -1,4 +1,6 @@
-import { ClipboardList, HardHat, Layers, PenTool } from 'lucide-react';
+import { ArrowRight, ClipboardList, HardHat, Layers, PenTool } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { SERVICES } from '../data/services';
 
 const services = [
   {
@@ -44,8 +46,9 @@ export default function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((svc) => {
+          {services.map((svc, i) => {
             const Icon = svc.icon;
+            const slug = SERVICES[i]?.slug;
             return (
               <div
                 key={svc.title}
@@ -63,6 +66,15 @@ export default function Services() {
                   </div>
                   <h3 className="text-lg font-bold text-charcoal mb-2">{svc.title}</h3>
                   <p className="text-charcoal-muted text-sm leading-relaxed">{svc.desc}</p>
+                  {slug && (
+                    <Link
+                      to={`/services/${slug}`}
+                      className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-charcoal hover:text-gold transition-colors"
+                    >
+                      Learn more
+                      <ArrowRight size={15} aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
               </div>
             );

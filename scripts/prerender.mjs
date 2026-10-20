@@ -38,6 +38,7 @@ const { routeMeta, SITE, DEFAULT_OG_IMAGE } = await import(
   path.join(ROOT, 'src/data/routeMeta.js')
 );
 const { caseStudies } = await import(path.join(ROOT, 'src/data/caseStudies.js'));
+const { SERVICES } = await import(path.join(ROOT, 'src/data/services.js'));
 
 const esc = (s = '') =>
   String(s)
@@ -134,6 +135,64 @@ function collectRoutes() {
       ogType: meta.ogType,
       robots: meta.robots,
       preloadImage: meta.preloadImage,
+    });
+  }
+
+  /*
+   * Service pages. Each gets a Service schema naming Branham as provider and
+   * the four states as areaServed, plus a breadcrumb back to the homepage
+   * services section. hasOfferCatalog on the homepage LocalBusiness already
+   * lists these as offerings; this connects each offering to a real URL.
+   */
+  for (const svc of SERVICES) {
+    const route = `/services/${svc.slug}`;
+    const url = `${SITE}${route}`;
+    const image = `${SITE}${svc.heroImg}`;
+
+    routes.push({
+      route,
+      url,
+      title: svc.title,
+      socialTitle: `${svc.name} | Branham Group`,
+      description: svc.metaDescription,
+      image,
+      ogType: 'website',
+      preloadImage: svc.heroImg,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Service',
+            '@id': `${url}#service`,
+            name: svc.name,
+            description: svc.metaDescription,
+            serviceType: svc.name,
+            provider: { '@id': `${SITE}/#organization` },
+            areaServed: [
+              { '@type': 'State', name: 'South Carolina' },
+              { '@type': 'State', name: 'North Carolina' },
+              { '@type': 'State', name: 'Georgia' },
+              { '@type': 'State', name: 'Florida' },
+            ],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: `${svc.name} capabilities`,
+              itemListElement: svc.capabilities.map((c) => ({
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: c.name },
+              })),
+            },
+          },
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+              { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE}/#services` },
+              { '@type': 'ListItem', position: 3, name: svc.name, item: url },
+            ],
+          },
+        ],
+      },
     });
   }
 
