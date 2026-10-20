@@ -92,7 +92,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p>© {new Date().getFullYear()} Branham Group, Inc. All rights reserved. Mount Pleasant, SC.</p>
+          {/*
+            The year is computed at build time on the server and again in the
+            browser. Those agree except across a New Year boundary with no
+            redeploy in between, so the mismatch is suppressed rather than
+            logged as a hydration error.
+          */}
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Branham Group, Inc. All rights reserved. Mount Pleasant, SC.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="hover:text-gold transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-gold transition-colors">Terms of Use</Link>
