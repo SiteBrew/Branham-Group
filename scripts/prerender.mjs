@@ -27,6 +27,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
+/*
+ * The server bundle, produced by `vite build --ssr` immediately before this
+ * script runs. It renders the real React tree to HTML so each page ships with
+ * its content in the document rather than an empty <div id="root">.
+ */
+const { render } = await import(path.join(ROOT, 'dist-ssr/entry-server.js'));
+
 const { routeMeta, SITE, DEFAULT_OG_IMAGE } = await import(
   path.join(ROOT, 'src/data/routeMeta.js')
 );
@@ -38,6 +45,26 @@ const esc = (s = '') =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+
+/*
+ * react-helmet-async emits its <title>, <meta> and <link> children inline
+ * under React 19's renderToString rather than hoisting them, which would put a
+ * second copy of every head tag inside <div id="root"> — duplicate titles and
+ * canonicals in the body, which is exactly what the FALLBACK block below is
+ * careful to avoid in the head.
+ *
+ * headFor() already owns the <head> and is the authoritative source, so these
+ * are stripped from the body markup. None of the three tags is valid body
+ * content in this app (navigation uses <a>), so a blanket strip is safe.
+ * Client-side behaviour is unchanged: helmet still sets them after hydration,
+ * which is how the site already worked.
+ */
+function stripHoistedHead(markup) {
+  return markup
+    .replace(/<title>[\s\S]*?<\/title>/g, '')
+    .replace(/<meta\b[^>]*\/?>/g, '')
+    .replace(/<link\b[^>]*\/?>/g, '');
+}
 
 /**
  * Build the <head> block for one route.
@@ -183,11 +210,19 @@ const template = fs.readFileSync(templatePath, 'utf8');
 // The fallback MUST be stripped on prerendered routes, otherwise the page ships
 // two <title> tags and two canonicals — worse than having none.
 const MARKER = '<!--PRERENDER_HEAD-->';
+const ROOT_DIV = '<div id="root"></div>';
 const FALLBACK_RE = /[ \t]*<!--FALLBACK_START-->[\s\S]*?<!--FALLBACK_END-->\n?/;
 
 if (!template.includes(MARKER)) {
   console.error(
     `[prerender] Marker ${MARKER} missing from index.html — cannot inject meta tags.`
+  );
+  process.exit(1);
+}
+if (!template.includes(ROOT_DIV)) {
+  console.error(
+    `[prerender] ${ROOT_DIV} not found in dist/index.html — cannot inject ` +
+      'server-rendered markup. Did the Vite template change?'
   );
   process.exit(1);
 }
@@ -202,8 +237,25 @@ if (!FALLBACK_RE.test(template)) {
 const routes = collectRoutes();
 let written = 0;
 
+let bodyFailures = 0;
+
 for (const r of routes) {
-  const html = template.replace(MARKER, headFor(r)).replace(FALLBACK_RE, '');
+  let html = template.replace(MARKER, headFor(r)).replace(FALLBACK_RE, '');
+
+  /*
+   * Render this route's markup into the root element. If a route throws, we
+   * keep the empty shell for that one page rather than failing the build —
+   * it degrades to the old client-rendered behaviour instead of shipping a
+   * broken page — but we count it and exit non-zero at the end so the failure
+   * cannot pass silently through CI.
+   */
+  try {
+    const markup = stripHoistedHead(render(r.route));
+    html = html.replace(ROOT_DIV, `<div id="root">${markup}</div>`);
+  } catch (err) {
+    bodyFailures++;
+    console.error(`[prerender] body render FAILED for ${r.route}: ${err.message}`);
+  }
 
   const outDir =
     r.route === '/' ? DIST : path.join(DIST, ...r.route.split('/').filter(Boolean));
@@ -265,4 +317,15 @@ const notFound = `<!doctype html>
 fs.writeFileSync(path.join(DIST, '404.html'), notFound, 'utf8');
 console.log('[prerender] 404.html                                       -> 404.html');
 
-console.log(`[prerender] ${written} routes prerendered with static meta tags.`);
+console.log(
+  `[prerender] ${written} routes prerendered — meta tags and server-rendered body.`
+);
+
+if (bodyFailures > 0) {
+  console.error(
+    `[prerender] ${bodyFailures} route(s) shipped without server-rendered markup. ` +
+      'Those pages still work but are client-rendered only. Failing the build so ' +
+      'this is not discovered in production.'
+  );
+  process.exit(1);
+}
