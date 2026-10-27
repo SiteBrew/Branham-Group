@@ -207,6 +207,48 @@ const projects = [
       'The new switchyard enhances the client\'s electrical distribution network\'s reliability and capacity.',
   },
   {
+    id: 7,
+    client: 'Renewable Water Resources (ReWa)',
+    title: 'ReWa \u2014 Post-Helene Solar PV Repair & Upgrade',
+    category: 'Disaster Recovery & Solar Repair',
+    categories: ['Industrial', 'Utility'],
+    completion: { year: 2026, month: 10, status: 'complete' },
+    location: 'Greenville, SC',
+    img: '/rewa-array-aerial.webp',
+    heroImg: '/rewa-array-aerial.webp',
+    gallery: [
+      '/rewa-array-aerial.webp',
+      '/rewa-campus-aerial.webp',
+      '/rewa-array-overhead.webp',
+      '/rewa-inverters.webp',
+      '/rewa-equipment-pads.webp',
+      '/rewa-innovation-campus.webp',
+    ],
+    summary:
+      'After Hurricane Helene damaged ReWa\'s 1-megawatt on-site solar array, Branham Group was selected as EPC contractor for the emergency repair and upgrade \u2014 rebuilding the system to FEMA-approved specifications so it could return to service as a distributed energy resource.',
+    overview:
+      'Following the extensive damage caused by Hurricane Helene in 2024, Branham Group was selected by Renewable Water Resources (ReWa), a regional water resource recovery utility in Greenville, SC, to serve as the Engineering, Procurement, and Construction contractor for the emergency repair and upgrade of its 1-megawatt on-site solar photovoltaic system. Work was performed to FEMA-approved specifications to support disaster reimbursement, with full documentation, before-and-after verification photography, and coordination with ReWa\'s Resiliency Program Coordinator throughout.',
+    scope: [
+      'Removal and replacement of ~42 circuit breakers and 12 fuses across four 480V Eaton panelboards and disconnects',
+      'Replacement of ~38 Fronius Symo 24kW/20kW inverters per original plans and specifications',
+      'Repair of fire-damaged equipment racks, including hang and conduit/wire connections for new inverters',
+      'Replacement of all Fronius network components, weather station, and eGauge data logger',
+      'Replacement of ~42 PV modules and all field-crimped DC connections',
+      'Insulation integrity testing of all 275 DC and 42 AC circuits',
+      'Grounding remediation to ensure system compliance and safe operation',
+      'Reprogramming and calibration of all power generation and communication systems',
+    ],
+    application: 'Solar PV Repair & Upgrade',
+    outcomes: [
+      { label: 'System Size', value: '1 MW' },
+      { label: 'Inverters Replaced', value: '~38' },
+      { label: 'Circuits Tested', value: '275 DC / 42 AC' },
+      { label: 'Specification', value: 'FEMA-Approved' },
+    ],
+    quote:
+      'The restored system now operates as a distributed energy resource \u2014 generating clean power directly at ReWa\'s facility and feeding surplus energy back to the surrounding grid \u2014 turning the challenges of a major storm event into an opportunity for a stronger, more reliable distributed energy asset.',
+  },
+  {
     id: 5,
     client: 'Healthcare System',
     title: 'Rural Hospital — Onsite Clean Energy',
@@ -242,7 +284,10 @@ const projects = [
 
 /* Newest first. Ties keep a stable order via the original id. */
 const sortedProjects = [...projects].sort(
-  (a, b) => b.completion.year - a.completion.year || a.id - b.id
+  (a, b) =>
+    b.completion.year - a.completion.year ||
+    (b.completion.month || 0) - (a.completion.month || 0) ||
+    a.id - b.id
 );
 
 /* Filters come from the data, so a category cannot appear with nothing behind
@@ -252,8 +297,18 @@ const filters = [
   ...[...new Set(projects.flatMap((p) => p.categories))].sort(),
 ];
 
-const completionLabel = (c) =>
-  c.status === 'in-construction' ? `In construction \u00b7 completes ${c.year}` : `Completed ${c.year}`;
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+/* Month is optional — only stated where the client has given us one. */
+const completionLabel = (c) => {
+  const when = c.month ? `${MONTHS[c.month - 1]} ${c.year}` : `${c.year}`;
+  return c.status === 'in-construction'
+    ? `In construction \u00b7 completes ${when}`
+    : `Completed ${when}`;
+};
 
 
 function ProjectModal({ project, onClose }) {
