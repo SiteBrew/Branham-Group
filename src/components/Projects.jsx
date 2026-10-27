@@ -1,18 +1,85 @@
 import { useState } from 'react';
-import { X, MapPin, Tag, ChevronRight, ChevronLeft } from 'lucide-react';
+import { X, MapPin, Tag, ChevronRight, ChevronLeft, CalendarCheck } from 'lucide-react';
 
+/*
+ * CATEGORY COLOURS
+ * Kept in one map rather than on each project, so a project gaining a second
+ * category cannot end up with a colour that disagrees with the same category
+ * elsewhere on the page.
+ */
+const CATEGORY_STYLES = {
+  Agriculture: 'bg-green-100 text-green-800',
+  Commercial: 'bg-yellow-100 text-yellow-800',
+  Healthcare: 'bg-pink-100 text-pink-800',
+  Industrial: 'bg-blue-100 text-blue-800',
+  Infrastructure: 'bg-slate-200 text-slate-800',
+  Mining: 'bg-orange-100 text-orange-800',
+};
+
+/*
+ * Projects are written here in any order and sorted for display by completion
+ * year, newest first — see sortedProjects below. Do not hand-order this array.
+ *
+ * `completion.status` is 'complete' or 'in-construction'. The in-construction
+ * entry sorts to the top because its year is the highest, so the label has to
+ * make clear it is not finished; "Completed 2027" on a live job would be
+ * wrong.
+ */
 const projects = [
+  {
+    id: 3,
+    client: 'Lumenant',
+    title: 'Lumenant',
+    category: 'Healthcare Solar Portfolio',
+    categories: ['Healthcare', 'Commercial'],
+    completion: { year: 2023, status: 'complete' },
+    location: 'Southeast United States',
+    img: '/lumenant-array-layout.webp',
+    heroImg: '/lumenant-array-layout.webp',
+    /* lumenant-new-1.webp was byte-identical to the array layout image. */
+    gallery: ['/lumenant-array-layout.webp'],
+    summary:
+      'The portfolio of on-site renewable energy projects was created to reduce carbon footprint, lower utility costs, improve energy security, and enhance resilience, ultimately contributing to a cleaner and healthier environment.',
+    overview:
+      'Lumenant engaged Branham Group to design and deliver a large-scale on-site solar energy portfolio across 8 healthcare facilities in the Southeast. Each 185kW DC ground-mount array was custom-engineered to the site\'s layout and electrical constraints. Combined, the 8-site portfolio delivers 1,480kW DC of capacity, generates 2,420,000 kWh of clean electricity annually, and is projected to offset 37,920 tons of CO\u2082 over its lifetime — the equivalent of 86 million car miles not driven.',
+    scope: [
+      '8-site solar array design and engineering (185kW DC each)',
+      'Ground-mount structural installation per site',
+      'Electrical integration and utility interconnection',
+      'Site permitting and environmental compliance',
+      'Portfolio-wide commissioning and performance monitoring',
+    ],
+    application: 'Multi-Site Solar Portfolio',
+    outcomes: [
+      { label: 'Total Capacity', value: '1,480kW DC' },
+      { label: 'Annual Output', value: '2.42M kWh' },
+      { label: 'CO\u2082 Offset (Life)', value: '37,920 tons' },
+      { label: 'Sites Deployed', value: '8 Locations' },
+    ],
+    quote:
+      'On-site renewable energy systems offer substantial long-term savings while significantly reducing greenhouse gas emissions and improving resilience for healthcare operations.',
+  },
   {
     id: 1,
     client: 'City Roots',
     title: 'City Roots',
     category: 'Agriculture & Renewable Energy',
-    tag: 'Agriculture',
-    tagColor: 'bg-green-100 text-green-800',
+    categories: ['Agriculture'],
+    completion: { year: 2024, status: 'complete' },
     location: 'Columbia, SC',
     img: '/cityroots-aerial.webp',
     heroImg: '/cityroots-sunset.webp',
-    gallery: ['/cityroots-aerial.webp', '/cityroots-sunset.webp', '/cityroots-greenhouse.webp', '/cityroots-commissioning.webp', '/cityroots-new-1.webp', '/cityroots-new-2.webp', '/cityroots-new-3.webp', '/cityroots-new-4.webp'],
+    /*
+     * Was eight images, four of which were byte-identical copies of the other
+     * four: cityroots-new-2 = aerial, new-3 = commissioning, new-4 =
+     * greenhouse, new-1 = sunset.
+     */
+    gallery: [
+      '/cityroots-aerial.webp',
+      '/cityroots-sunset.webp',
+      '/cityroots-greenhouse.webp',
+      '/cityroots-commissioning.webp',
+    ],
     summary:
       'By integrating solar power and geothermal energy, the microgreens farm achieved net-zero energy usage, demonstrating that renewable energy adoption is both feasible and beneficial for small-scale agricultural operations.',
     overview:
@@ -24,7 +91,6 @@ const projects = [
       'Greenhouse environmental control automation',
       'Grid interconnection and net-metering setup',
     ],
-    industry: 'Agriculture',
     application: 'Net-Zero Energy System',
     outcomes: [
       { label: 'Solar Size', value: '480kW' },
@@ -40,16 +106,25 @@ const projects = [
     client: 'Nucor Steel',
     title: 'Nucor Canopy',
     category: 'Industrial Solar',
-    tag: 'Industrial',
-    tagColor: 'bg-blue-100 text-blue-800',
+    categories: ['Industrial'],
+    completion: { year: 2025, status: 'complete' },
     location: 'South Carolina',
     img: '/nucor-exterior.webp',
     heroImg: '/nucor-interior.webp',
-    gallery: ['/nucor-exterior.webp', '/nucor-interior.webp', '/nucor-commissioning.webp', '/nucor-new-1.webp', '/nucor-new-2.webp', '/nucor-new-3.webp', '/nucor-new-4.webp'],
+    /*
+     * Was seven images; nucor-new-1 = interior, new-2 = commissioning, new-4 =
+     * exterior. Only nucor-new-3 was a distinct photograph.
+     */
+    gallery: [
+      '/nucor-exterior.webp',
+      '/nucor-interior.webp',
+      '/nucor-commissioning.webp',
+      '/nucor-new-3.webp',
+    ],
     summary:
       'The solar canopy generates renewable energy and additionally provides functional company and community outdoor space. From daily employee gatherings to corporate events, the canopy space contributes to a positive corporate culture. The solar canopy and the renewable energy it generates support Nucor\'s commitment to sourcing diverse, clean energy for its circular steelmaking operations.',
     overview:
-      'Nucor Steel engaged Branham Group to design and build a dual-purpose solar installation: a large-format canopy structure generating meaningful clean energy for plant operations while providing attractive outdoor gathering space. The 81kW DC system delivers 175,392 kWh of annual production and is projected to offset 2,537 metric tons of CO₂ over its lifetime — the equivalent of 4,631,638 car miles not driven, or 30,556 trees planted.',
+      'Nucor Steel engaged Branham Group to design and build a dual-purpose solar installation: a large-format canopy structure generating meaningful clean energy for plant operations while providing attractive outdoor gathering space. The 81kW DC system delivers 175,392 kWh of annual production and is projected to offset 2,537 metric tons of CO\u2082 over its lifetime — the equivalent of 4,631,638 car miles not driven, or 30,556 trees planted.',
     scope: [
       'Structural engineering and solar canopy design',
       'High-capacity 81kW DC solar PV installation',
@@ -57,65 +132,31 @@ const projects = [
       'Outdoor amenity and hardscape construction',
       'Safety systems and code compliance',
     ],
-    industry: 'Industrial',
     application: 'Solar Canopy Installation',
     outcomes: [
       { label: 'System Size', value: '81kW DC' },
       { label: 'Annual Output', value: '175,392 kWh' },
-      { label: 'CO₂ Offset (Life)', value: '2,537 tons' },
+      { label: 'CO\u2082 Offset (Life)', value: '2,537 tons' },
       { label: 'Car Miles Saved', value: '4.6M+' },
     ],
     quote:
       'The solar canopy generates renewable energy for steelmaking operations while providing functional company and community outdoor space.',
   },
   {
-    id: 3,
-    client: 'Lumenant',
-    title: 'Lumenant',
-    category: 'Healthcare Solar Portfolio',
-    tag: 'Commercial',
-    tagColor: 'bg-yellow-100 text-yellow-800',
-    location: 'Southeast United States',
-    img: '/lumenant-array-layout.webp',
-    heroImg: '/lumenant-array-layout.webp',
-    gallery: ['/lumenant-array-layout.webp', '/lumenant-new-1.webp'],
-    summary:
-      'The portfolio of on-site renewable energy projects was created to reduce carbon footprint, lower utility costs, improve energy security, and enhance resilience, ultimately contributing to a cleaner and healthier environment.',
-    overview:
-      'Lumenant engaged Branham Group to design and deliver a large-scale on-site solar energy portfolio across 8 healthcare facilities in the Southeast. Each 185kW DC ground-mount array was custom-engineered to the site\'s layout and electrical constraints. Combined, the 8-site portfolio delivers 1,480kW DC of capacity, generates 2,420,000 kWh of clean electricity annually, and is projected to offset 37,920 tons of CO₂ over its lifetime — the equivalent of 86 million car miles not driven.',
-    scope: [
-      '8-site solar array design and engineering (185kW DC each)',
-      'Ground-mount structural installation per site',
-      'Electrical integration and utility interconnection',
-      'Site permitting and environmental compliance',
-      'Portfolio-wide commissioning and performance monitoring',
-    ],
-    industry: 'Commercial',
-    application: 'Multi-Site Solar Portfolio',
-    outcomes: [
-      { label: 'Total Capacity', value: '1,480kW DC' },
-      { label: 'Annual Output', value: '2.42M kWh' },
-      { label: 'CO₂ Offset (Life)', value: '37,920 tons' },
-      { label: 'Sites Deployed', value: '8 Locations' },
-    ],
-    quote:
-      'On-site renewable energy systems offer substantial long-term savings while significantly reducing greenhouse gas emissions and improving resilience for healthcare operations.',
-  },
-  {
     id: 4,
-    client: 'OceanaGold',
-    title: 'OceanaGold Haile Gold Mine',
-    category: 'Industrial Infrastructure',
-    tag: 'Mining',
-    tagColor: 'bg-orange-100 text-orange-800',
-    location: 'Haile Gold Mine, SC',
+    client: 'HGM',
+    title: 'HGM Reverse Osmosis Plant',
+    category: 'Industrial Water Treatment',
+    categories: ['Industrial'],
+    completion: { year: 2025, status: 'complete' },
+    location: 'South Carolina',
     img: '/oceana-ro-1.webp',
     heroImg: '/oceana-ro-1.webp',
     gallery: ['/oceana-ro-1.webp', '/oceana-ro-2.webp', '/oceana-ro-3.webp', '/oceana-ro-4.webp'],
     summary:
       'Reverse osmosis (R.O.) plants are crucial in industrial operations for providing purified water with low levels of contaminants, which helps reduce equipment wear and extend the lifespan of critical infrastructure. The scope of work includes concrete foundations, rebar fabrication, excavation, and ensuring sustainability through efficient construction and wastewater recycling.',
     overview:
-      'OceanaGold\'s Haile Gold Mine required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
+      'HGM required high-capacity water purification systems to meet both operational and environmental compliance requirements. Branham Group managed the full construction scope — from engineered concrete foundations to the mechanical installation of RO treatment units and closed-loop wastewater recycling systems.',
     scope: [
       'Engineered concrete foundations for treatment units',
       'Reverse osmosis system mechanical installation',
@@ -123,11 +164,10 @@ const projects = [
       'Wastewater collection and recycling infrastructure',
       'Environmental compliance and containment systems',
     ],
-    industry: 'Mining',
     application: 'Industrial Water Treatment',
     outcomes: [
       { label: 'System Type', value: 'Reverse Osmosis' },
-      { label: 'Application', value: 'Gold Mining' },
+      { label: 'Application', value: 'Water Purification' },
       { label: 'Feature', value: 'Wastewater Recycling' },
       { label: 'Compliance', value: 'Environmental' },
     ],
@@ -135,45 +175,12 @@ const projects = [
       'Reverse osmosis plants are crucial in industrial operations for providing purified water with low levels of contaminants.',
   },
   {
-    id: 5,
-    client: 'Healthcare System',
-    title: 'Large-Scale Solar — Healthcare Sustainability Goals',
-    category: 'Healthcare & Renewable Energy',
-    tag: 'Healthcare',
-    tagColor: 'bg-pink-100 text-pink-800',
-    location: 'Southeast United States',
-    img: '/healthcare-array-layout.webp',
-    heroImg: '/healthcare-array-layout.webp',
-    gallery: ['/healthcare-array-layout.webp'],
-    summary:
-      'A Southeast healthcare system targeting 50% Scope 1 & 2 emissions reduction by 2030 partnered with Branham Group for an on-site solar installation generating 692,000+ kWh annually — delivering $2.5M in projected lifetime savings and offsetting 490 metric tons of CO₂ per year.',
-    overview:
-      'A Southeast healthcare organization with a published net-zero-by-2050 commitment engaged Branham Group to design and build a large-scale on-site solar PV system. Engineered as a zero-export installation, the system generates over 692,000 kWh annually — all consumed on-site — supporting the health system\'s target of 50% Scope 1 and Scope 2 emissions reduction by 2030. Projected lifetime utility savings total $2.5 million with a 5–7 year ROI.',
-    scope: [
-      'Full EPC: engineering, procurement, and construction',
-      'Zero-export solar PV system design',
-      'On-site electrical integration and metering',
-      'Utility interconnection and permitting',
-      'Commissioning and performance monitoring setup',
-    ],
-    industry: 'Healthcare',
-    application: 'On-Site Solar Installation',
-    outcomes: [
-      { label: 'Annual Output', value: '692,000+ kWh' },
-      { label: 'Lifetime Savings', value: '$2.5M' },
-      { label: 'CO₂ Offset/Year', value: '490 mt' },
-      { label: 'ROI Timeline', value: '5–7 Years' },
-    ],
-    quote:
-      'This project directly advances our commitment to 50% Scope 1 and Scope 2 emissions reduction by 2030 — and puts us firmly on the path to net-zero by 2050.',
-  },
-  {
     id: 6,
     client: 'HGM',
     title: 'HGM Switchyard',
     category: 'Electrical Infrastructure',
-    tag: 'Utility',
-    tagColor: 'bg-purple-100 text-purple-800',
+    categories: ['Mining', 'Infrastructure'],
+    completion: { year: 2026, status: 'complete' },
     location: 'South Carolina',
     img: '/hgm-1.webp',
     heroImg: '/hgm-1.webp',
@@ -189,7 +196,6 @@ const projects = [
       'Medium-voltage cable and bus duct installation',
       'Protective relay programming and commissioning',
     ],
-    industry: 'Utility',
     application: 'Electrical Switchyard',
     outcomes: [
       { label: 'Voltage', value: '24.9kV' },
@@ -200,9 +206,55 @@ const projects = [
     quote:
       'The new switchyard enhances the client\'s electrical distribution network\'s reliability and capacity.',
   },
+  {
+    id: 5,
+    client: 'Healthcare System',
+    title: 'Rural Hospital — Onsite Clean Energy',
+    category: 'Healthcare & Renewable Energy',
+    categories: ['Healthcare', 'Commercial'],
+    completion: { year: 2027, status: 'in-construction' },
+    location: 'Southeast United States',
+    img: '/healthcare-array-layout.webp',
+    heroImg: '/healthcare-array-layout.webp',
+    gallery: ['/healthcare-array-layout.webp'],
+    summary:
+      'A Southeast healthcare system targeting 50% Scope 1 & 2 emissions reduction by 2030 partnered with Branham Group for an on-site solar installation generating 692,000+ kWh annually — delivering $2.5M in projected lifetime savings and offsetting 490 metric tons of CO\u2082 per year.',
+    overview:
+      'A Southeast healthcare organization with a published net-zero-by-2050 commitment engaged Branham Group to design and build a large-scale on-site solar PV system. Engineered as a zero-export installation, the system is designed to generate over 692,000 kWh annually — all consumed on-site — supporting the health system\'s target of 50% Scope 1 and Scope 2 emissions reduction by 2030. Projected lifetime utility savings total $2.5 million with a 5–7 year ROI. The project is currently in construction, with completion expected in 2027.',
+    scope: [
+      'Full EPC: engineering, procurement, and construction',
+      'Zero-export solar PV system design',
+      'On-site electrical integration and metering',
+      'Utility interconnection and permitting',
+      'Commissioning and performance monitoring setup',
+    ],
+    application: 'On-Site Solar Installation',
+    outcomes: [
+      { label: 'Annual Output', value: '692,000+ kWh' },
+      { label: 'Lifetime Savings', value: '$2.5M' },
+      { label: 'CO\u2082 Offset/Year', value: '490 mt' },
+      { label: 'ROI Timeline', value: '5–7 Years' },
+    ],
+    quote:
+      'This project directly advances our commitment to 50% Scope 1 and Scope 2 emissions reduction by 2030 — and puts us firmly on the path to net-zero by 2050.',
+  },
 ];
 
-const filters = ['All', 'Agriculture', 'Industrial', 'Commercial', 'Mining', 'Healthcare', 'Utility'];
+/* Newest first. Ties keep a stable order via the original id. */
+const sortedProjects = [...projects].sort(
+  (a, b) => b.completion.year - a.completion.year || a.id - b.id
+);
+
+/* Filters come from the data, so a category cannot appear with nothing behind
+   it or go missing when a project gains one. */
+const filters = [
+  'All',
+  ...[...new Set(projects.flatMap((p) => p.categories))].sort(),
+];
+
+const completionLabel = (c) =>
+  c.status === 'in-construction' ? `In construction \u00b7 completes ${c.year}` : `Completed ${c.year}`;
+
 
 function ProjectModal({ project, onClose }) {
   const [heroIdx, setHeroIdx] = useState(0);
@@ -261,15 +313,23 @@ function ProjectModal({ project, onClose }) {
             <X size={18} />
           </button>
           <div className="absolute bottom-0 left-0 p-6 md:p-8">
-            <span className={`text-xs font-semibold px-2 py-1 rounded-full mb-3 inline-block ${project.tagColor}`}>
-              {project.tag}
-            </span>
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {project.categories.map((c) => (
+                <span
+                  key={c}
+                  className={`text-xs font-semibold px-2 py-1 rounded-full ${CATEGORY_STYLES[c]}`}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
             <h2 className="text-2xl md:text-3xl font-black text-white leading-tight">
               {project.title}
             </h2>
             <div className="flex items-center gap-4 mt-2 text-gray-300 text-sm">
               <span className="flex items-center gap-1"><MapPin size={12} /> {project.location}</span>
               <span className="flex items-center gap-1"><Tag size={12} /> {project.client}</span>
+              <span className="flex items-center gap-1"><CalendarCheck size={12} /> {completionLabel(project.completion)}</span>
             </div>
           </div>
         </div>
@@ -334,8 +394,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const filtered = activeFilter === 'All'
-    ? projects
-    : projects.filter((p) => p.tag === activeFilter);
+    ? sortedProjects
+    : sortedProjects.filter((p) => p.categories.includes(activeFilter));
 
   return (
     <>
@@ -384,10 +444,15 @@ export default function Projects() {
                     style={{ backgroundImage: `url('${proj.img}')` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-3 left-3">
-                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${proj.tagColor}`}>
-                      {proj.tag}
-                    </span>
+                  <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 pr-12">
+                    {proj.categories.map((c) => (
+                      <span
+                        key={c}
+                        className={`text-xs font-semibold px-2 py-1 rounded-full ${CATEGORY_STYLES[c]}`}
+                      >
+                        {c}
+                      </span>
+                    ))}
                   </div>
                   <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="bg-gold text-white text-xs font-semibold px-3 py-1 uppercase tracking-wider">
@@ -401,9 +466,18 @@ export default function Projects() {
                   <p className="text-gold text-xs font-semibold uppercase tracking-wider mb-1">
                     {proj.category}
                   </p>
-                  <h3 className="text-base font-bold text-charcoal mb-3 leading-snug group-hover:text-gold transition-colors duration-200">
+                  <h3 className="text-base font-bold text-charcoal mb-1.5 leading-snug group-hover:text-gold transition-colors duration-200">
                     {proj.title}
                   </h3>
+                  <p
+                    className={`text-xs font-semibold mb-3 ${
+                      proj.completion.status === 'in-construction'
+                        ? 'text-gold'
+                        : 'text-charcoal-muted/70'
+                    }`}
+                  >
+                    {completionLabel(proj.completion)}
+                  </p>
                   <p className="text-charcoal-muted text-sm leading-relaxed flex-1">
                     {proj.summary}
                   </p>
@@ -411,7 +485,7 @@ export default function Projects() {
                   {/* Consistent stat pills */}
                   <div className="flex flex-wrap gap-x-5 gap-y-2 mt-5 pt-5 border-t border-gray-100">
                     {[
-                      { label: 'Industry', value: proj.industry },
+                      { label: 'Sector', value: proj.categories.join(' / ') },
                       { label: 'Project Application', value: proj.application },
                     ].map((stat) => (
                       <div key={stat.label} className="flex items-center gap-1.5">
