@@ -14,7 +14,33 @@ const CATEGORY_STYLES = {
   Industrial: 'bg-blue-100 text-blue-800',
   Infrastructure: 'bg-slate-200 text-slate-800',
   Mining: 'bg-orange-100 text-orange-800',
+  Utility: 'bg-purple-100 text-purple-800',
 };
+
+const FALLBACK_CATEGORY_STYLE = 'bg-gray-200 text-gray-800';
+
+/*
+ * Never index CATEGORY_STYLES directly.
+ *
+ * A missing key put `undefined` straight into the className, which rendered a
+ * badge with no background and near-white text on a photograph - invisible
+ * rather than merely wrong, so it survived a visual check. That happened when
+ * Utility left the data and came back with the ReWa project while this map,
+ * being hand-written, did not follow.
+ *
+ * The fallback makes the worst case a readable grey badge. The warning makes
+ * it something a developer sees rather than something a client reports.
+ */
+function categoryStyle(category) {
+  const style = CATEGORY_STYLES[category];
+  if (!style) {
+    console.warn(
+      `[Projects] No colour defined for category "${category}" - using fallback. Add it to CATEGORY_STYLES.`
+    );
+    return FALLBACK_CATEGORY_STYLE;
+  }
+  return style;
+}
 
 /*
  * Projects are written here in any order and sorted for display by completion
@@ -372,7 +398,7 @@ function ProjectModal({ project, onClose }) {
               {project.categories.map((c) => (
                 <span
                   key={c}
-                  className={`text-xs font-semibold px-2 py-1 rounded-full ${CATEGORY_STYLES[c]}`}
+                  className={`text-xs font-semibold px-2 py-1 rounded-full ${categoryStyle(c)}`}
                 >
                   {c}
                 </span>
@@ -503,7 +529,7 @@ export default function Projects() {
                     {proj.categories.map((c) => (
                       <span
                         key={c}
-                        className={`text-xs font-semibold px-2 py-1 rounded-full ${CATEGORY_STYLES[c]}`}
+                        className={`text-xs font-semibold px-2 py-1 rounded-full ${categoryStyle(c)}`}
                       >
                         {c}
                       </span>
