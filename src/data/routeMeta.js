@@ -13,6 +13,30 @@ export const routeMeta = {
   '/': {
     // LCP element on the homepage — see preload handling in prerender.mjs.
     preloadImage: '/brownfield-solar-1.webp',
+    /*
+     * VideoObject for the ReWa project film. Google will not index a video it
+     * cannot find a thumbnail and duration for, and this page is where the
+     * film lives. Duration is ISO 8601 — the file is 1:58.
+     */
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: 'ReWa Post-Helene Solar PV Repair & Upgrade — Project Film',
+      description:
+        "Narrated drone walkthrough of Branham Group's emergency repair and upgrade of ReWa's 1 MW on-site solar array in Greenville, SC, following Hurricane Helene. Completed October 2026.",
+      thumbnailUrl: ['https://www.branham-group.com/video/rewa-poster.jpg'],
+      contentUrl: 'https://www.branham-group.com/video/rewa-project.mp4',
+      uploadDate: '2026-11-02',
+      duration: 'PT1M58S',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Branham Group, Inc.',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.branham-group.com/logo.png',
+        },
+      },
+    },
     title: 'Branham Group | EPC Contractor — SC, NC, GA & FL',
     description:
       'Full-service EPC contractor since 1979. Solar, design-build, construction management, and resilient infrastructure across SC, NC, GA, and FL.',

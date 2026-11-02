@@ -51,7 +51,7 @@ function categoryStyle(category) {
  * make clear it is not finished; "Completed 2027" on a live job would be
  * wrong.
  */
-const projects = [
+export const projects = [
   {
     id: 3,
     client: 'Lumenant',

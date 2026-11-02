@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
+import FeaturedProject from '../components/FeaturedProject';
 import About from '../components/About';
 import Services from '../components/Services';
 import Markets from '../components/Markets';
@@ -32,6 +33,7 @@ export default function HomePage() {
       </Helmet>
 
       <Hero />
+      <FeaturedProject />
       <About />
       <Services />
       <Markets />

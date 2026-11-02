@@ -144,6 +144,7 @@ function collectRoutes() {
       ogType: meta.ogType,
       robots: meta.robots,
       preloadImage: meta.preloadImage,
+      jsonLd: meta.jsonLd,
     });
   }
 
