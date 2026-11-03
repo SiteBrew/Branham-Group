@@ -217,24 +217,17 @@ export default function CaseStudyPage() {
         <meta name="twitter:description" content={study.metaDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        <script type="application/ld+json">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: `${study.title} — ${study.subtitle}`,
-            description: study.metaDescription,
-            image: ogImage,
-            datePublished: study.date,
-            articleSection: study.industry,
-            author: { '@type': 'Organization', name: 'Branham Group, Inc.' },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Branham Group, Inc.',
-              logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` },
-            },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-          })}
-        </script>
+        {/*
+          Article JSON-LD deliberately lives only in the prerendered <head>,
+          written by headFor() in scripts/prerender.mjs — which also emits
+          BreadcrumbList and, for case studies with a film, VideoObject.
+
+          It used to be duplicated here inside <Helmet>. React 19 renders
+          <script> in place rather than hoisting it, so the client tree had a
+          node the server tree did not, and every case study page threw a
+          hydration mismatch (error #418) and re-rendered itself client-side.
+          Crawlers read the prerendered head, so nothing is lost by removing it.
+        */}
       </Helmet>
 
       {/* Hero */}
