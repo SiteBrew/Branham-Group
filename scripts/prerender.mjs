@@ -60,21 +60,31 @@ const esc = (s = '') =>
  * Client-side behaviour is unchanged: helmet still sets them after hydration,
  * which is how the site already worked.
  */
-function stripHoistedHead(markup) {
-  return markup
-    .replace(/<title>[\s\S]*?<\/title>/g, '')
-    .replace(/<meta\b[^>]*\/?>/g, '')
-    .replace(/<link\b[^>]*\/?>/g, '')
-    /*
-     * CaseStudyPage renders its own Article JSON-LD through Helmet. headFor()
-     * already emits Article + BreadcrumbList for those routes, so leaving this
-     * in the body shipped the same Article twice per page.
-     */
-    .replace(
-      /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/g,
-      ''
+function assertNoHeadTagsInBody(markup, route) {
+  /*
+   * Helmet is aliased to a no-op for the SSR build (src/helmet-ssr-noop.jsx),
+   * so no head tags should reach the body. This used to be a regex strip,
+   * which silently removed nodes the client still rendered and broke
+   * hydration. It is now an assertion: if head tags appear here again the
+   * build fails loudly rather than shipping a page that re-renders itself.
+   */
+  /*
+   * <link> is deliberately not checked: React 19 emits its own
+   * <link rel="preload" as="image"> for rendered <img> tags. Those are
+   * React-managed hoistables, consistent across server and client, and not a
+   * Helmet leak.
+   */
+  const leak = /<title>|<meta\b|application\/ld\+json/.test(markup);
+  if (leak) {
+    console.error(
+      `[prerender] head tags leaked into the body for ${route}. ` +
+        'Check the SSR Helmet alias in vite.config.js.'
     );
+    process.exit(1);
+  }
+  return markup;
 }
+
 
 /**
  * Build the <head> block for one route.
@@ -344,7 +354,7 @@ for (const r of routes) {
    * cannot pass silently through CI.
    */
   try {
-    const markup = stripHoistedHead(render(r.route));
+    const markup = assertNoHeadTagsInBody(render(r.route), r.route);
     html = html.replace(ROOT_DIV, `<div id="root">${markup}</div>`);
   } catch (err) {
     bodyFailures++;
