@@ -1,6 +1,8 @@
-import { useRef, useState } from 'react';
-import { Play, MapPin, CalendarCheck, ArrowRight } from 'lucide-react';
+import { MapPin, CalendarCheck, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { projects } from './Projects';
+import VideoPlayer from './VideoPlayer';
+import { REWA_FILM } from '../data/media';
 
 /*
  * Featured project — the ReWa post-Helene repair, with the client's own
@@ -23,19 +25,11 @@ import { projects } from './Projects';
  */
 
 const REWA_ID = 7;
+const REWA_SLUG = 'rewa-post-helene-solar-repair';
 
 export default function FeaturedProject() {
   const project = projects.find((p) => p.id === REWA_ID);
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef(null);
-
   if (!project) return null;
-
-  const start = () => {
-    setPlaying(true);
-    /* Mounting and playing in the same tick needs the ref to exist first. */
-    requestAnimationFrame(() => videoRef.current?.play?.());
-  };
 
   const completed = `${['January','February','March','April','May','June','July','August','September','October','November','December'][project.completion.month - 1]} ${project.completion.year}`;
 
@@ -64,74 +58,7 @@ export default function FeaturedProject() {
         <div className="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-14 items-start">
           {/* Player */}
           <div>
-            <div className="relative bg-black overflow-hidden aspect-video">
-              {playing ? (
-                <video
-                  ref={videoRef}
-                  className="w-full h-full"
-                  controls
-                  playsInline
-                  preload="auto"
-                  poster="/video/rewa-poster.jpg"
-                  /*
-                   * No <track> yet. The narration is uncaptioned, which is a
-                   * WCAG 1.2.2 failure for prerecorded audio. Drop a VTT at
-                   * /video/rewa-project.en.vtt and add a <track> here the
-                   * moment the client supplies a transcript.
-                   */
-                >
-                  <source src="/video/rewa-project.mp4" type="video/mp4" />
-                  Your browser cannot play this video.{' '}
-                  <a href="/video/rewa-project.mp4">Download it instead</a>.
-                </video>
-              ) : (
-                <button
-                  type="button"
-                  onClick={start}
-                  className="group block w-full h-full relative cursor-pointer"
-                  aria-label={`Play the project film — ${project.title}, 1 minute 58 seconds`}
-                >
-                  <picture>
-                    <source srcSet="/video/rewa-poster.webp" type="image/webp" />
-                    <img
-                      src="/video/rewa-poster.jpg"
-                      alt="Aerial view of the restored solar array at ReWa's Greenville campus"
-                      className="w-full h-full object-cover"
-                      width="1440"
-                      height="810"
-                      loading="lazy"
-                    />
-                  </picture>
-
-                  <span className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/25 transition-opacity group-hover:opacity-90" />
-
-                  <span className="absolute inset-0 flex items-center justify-center">
-                    <span className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gold/95 flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110">
-                      <Play
-                        size={30}
-                        className="text-charcoal ml-1"
-                        fill="currentColor"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </span>
-
-                  <span className="absolute left-5 bottom-5 right-5 flex items-end justify-between gap-4">
-                    <span className="text-left">
-                      <span className="block text-xs font-semibold uppercase tracking-widest text-gold">
-                        Project film
-                      </span>
-                      <span className="block text-base md:text-lg font-bold text-white mt-1">
-                        Narrated site walkthrough
-                      </span>
-                    </span>
-                    <span className="text-xs font-semibold text-white/80 bg-black/55 px-2.5 py-1 shrink-0">
-                      1:58
-                    </span>
-                  </span>
-                </button>
-              )}
-            </div>
+            <VideoPlayer {...REWA_FILM} />
 
             <p className="text-xs text-gray-500 mt-3">
               Drone footage and narration courtesy of Branham Group.
@@ -173,13 +100,13 @@ export default function FeaturedProject() {
               ))}
             </dl>
 
-            <a
-              href="#projects"
+            <Link
+              to={`/news/${REWA_SLUG}`}
               className="inline-flex items-center gap-2 mt-8 font-semibold text-white hover:text-gold transition-colors"
             >
-              See all projects
+              Read the full case study
               <ArrowRight size={18} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

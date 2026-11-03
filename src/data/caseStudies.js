@@ -632,6 +632,159 @@ export const caseStudies = [
       },
     ],
   },
+
+  // ─────────────────────────────────────────────────────────────
+  // 6. REWA — Post-Helene solar PV repair & upgrade (Oct 2026)
+  //    Content from the client's own project description. The film is the
+  //    client's narrated drone footage; see src/data/media.js.
+  // ─────────────────────────────────────────────────────────────
+  {
+    slug: 'rewa-post-helene-solar-repair',
+    seoTitle: 'ReWa Post-Helene Solar Repair | Branham Group',
+    kind: 'Project Summary',
+    industry: 'Industrial',
+    title: 'Back Online After Helene',
+    subtitle: 'ReWa 1 MW Solar PV Repair & Upgrade — Greenville, SC',
+    deck: "Rebuilding a storm-damaged 1-megawatt solar array to FEMA-approved specifications, and returning it to service as a distributed energy resource.",
+    date: 'Completed October 2026',
+    byline: 'Branham Group, Inc.',
+    heroImg: '/video/rewa-poster.jpg',
+    metaDescription:
+      "After Hurricane Helene damaged ReWa's 1 MW on-site solar array in Greenville, SC, Branham Group served as EPC contractor for the emergency repair and upgrade — completed October 2026 to FEMA-approved specifications.",
+    stats: [
+      { value: '1', unit: 'MW', label: 'System Size' },
+      { value: '~38', unit: '', label: 'Inverters Replaced' },
+      { value: '317', unit: '', label: 'Circuits Tested' },
+      { value: 'FEMA', unit: '', label: 'Approved Spec' },
+    ],
+    sections: [
+      {
+        type: 'video',
+        src: '/video/rewa-project.mp4',
+        posterJpg: '/video/rewa-poster.jpg',
+        posterWebp: '/video/rewa-poster.webp',
+        alt: "Aerial view of the restored solar array at ReWa's Greenville campus",
+        duration: '1:58',
+        title: 'Narrated site walkthrough',
+        captions: null,
+        caption:
+          'Drone footage and narration courtesy of Branham Group. Filmed on site at the ReWa Innovation Campus, Greenville, SC.',
+      },
+      {
+        type: 'prose',
+        heading: 'The Storm',
+        body: [
+          'Hurricane Helene caused extensive damage across the Southeast in 2024. At Renewable Water Resources (ReWa) — the regional water resource recovery utility serving Greenville County — the damage included the 1-megawatt solar photovoltaic array on the utility’s own campus.',
+          'Branham Group was selected as the Engineering, Procurement, and Construction contractor for the emergency repair and upgrade of that system.',
+        ],
+      },
+      {
+        type: 'list',
+        heading: 'Scope of Work',
+        numbered: 1,
+        items: [
+          {
+            title: 'Protective devices',
+            desc: 'Removal and replacement of approximately 42 circuit breakers and 12 fuses across four 480V Eaton panelboards and disconnects.',
+          },
+          {
+            title: 'Inverters',
+            desc: 'Replacement of approximately 38 Fronius Symo 24kW/20kW inverters, per the original plans and specifications.',
+          },
+          {
+            title: 'Fire-damaged racking',
+            desc: 'Repair of fire-damaged equipment racks, including hanging and conduit/wire connections for the new inverters.',
+          },
+          {
+            title: 'Monitoring and communications',
+            desc: 'Replacement of all Fronius network components, the weather station, and the eGauge data logger.',
+          },
+          {
+            title: 'Modules and DC connections',
+            desc: 'Replacement of approximately 42 PV modules and all field-crimped DC connections.',
+          },
+          {
+            title: 'Integrity testing',
+            desc: 'Insulation integrity testing across all 275 DC and 42 AC circuits — 317 in total.',
+          },
+          {
+            title: 'Grounding',
+            desc: 'Grounding remediation to ensure system compliance and safe operation.',
+          },
+          {
+            title: 'Commissioning',
+            desc: 'Reprogramming and calibration of all power generation and communication systems.',
+          },
+        ],
+      },
+      {
+        type: 'image',
+        src: '/rewa-inverters.webp',
+        alt: 'The replacement bank of Fronius inverters installed at the ReWa array',
+        caption: 'Approximately 38 Fronius Symo inverters were replaced to original specification.',
+      },
+      {
+        type: 'prose',
+        heading: 'Built for Reimbursement',
+        body: [
+          'Work was performed to FEMA-approved specifications to support disaster reimbursement, with full documentation, before-and-after verification photography, and coordination with ReWa’s Resiliency Program Coordinator throughout.',
+          'On a disaster recovery project, how the work is evidenced matters as much as how it is built. A repair that cannot be documented to the standard is a repair the owner may not be able to claim.',
+        ],
+      },
+      {
+        type: 'image',
+        src: '/rewa-equipment-pads.webp',
+        alt: 'Switchgear and equipment pads at the ReWa solar array',
+        caption: 'Switchgear and equipment pads following remediation.',
+      },
+      {
+        type: 'prose',
+        heading: 'A Distributed Energy Resource',
+        body: [
+          'The restored system now operates as a distributed energy resource — generating clean, renewable power directly at ReWa’s facility and feeding surplus energy back to the surrounding distributed grid.',
+          'Rather than relying solely on centralized generation and long-distance transmission, the array produces electricity where it is consumed.',
+        ],
+      },
+      {
+        type: 'list',
+        heading: 'What That Delivers',
+        numbered: 2,
+        items: [
+          {
+            title: 'Grid resilience',
+            desc: 'On-site generation supports the local distribution grid and reduces strain during peak demand periods, contributing to a more stable and flexible regional grid.',
+          },
+          {
+            title: 'Energy cost savings',
+            desc: "Power generated on site offsets ReWa's utility costs, with excess production credited back through the local power grid.",
+          },
+          {
+            title: 'Reduced transmission losses',
+            desc: 'Generating electricity at the point of use avoids the line losses associated with transporting power over long distances.',
+          },
+          {
+            title: 'Lower emissions',
+            desc: 'Clean solar generation displaces fossil-fuel-based grid electricity, supporting regional sustainability and decarbonization goals.',
+          },
+          {
+            title: 'Energy independence',
+            desc: 'On-site generation gives ReWa greater visibility and control over its energy profile — an increasingly important capability for critical water infrastructure.',
+          },
+        ],
+      },
+      {
+        type: 'pullquote',
+        quote:
+          'Turning the challenges of a major storm event into an opportunity for a stronger, more reliable distributed energy asset.',
+      },
+      {
+        type: 'image',
+        src: '/rewa-campus-aerial.webp',
+        alt: 'Aerial view of the ReWa Innovation Campus and the restored solar array',
+        caption: 'The ReWa Innovation Campus, Greenville, South Carolina.',
+      },
+    ],
+  },
 ];
 
 export const getCaseStudy = (slug) => caseStudies.find((cs) => cs.slug === slug);

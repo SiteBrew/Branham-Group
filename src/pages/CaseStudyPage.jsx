@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, Download, Share2, Quote } from 'lucide-react';
+import VideoPlayer from '../components/VideoPlayer';
 import { getCaseStudy } from '../data/caseStudies';
 
 const SITE = 'https://www.branham-group.com';
@@ -143,6 +144,25 @@ function PullQuoteSection({ s }) {
   );
 }
 
+function VideoSection({ s }) {
+  return (
+    <figure className="my-10">
+      <VideoPlayer
+        src={s.src}
+        posterJpg={s.posterJpg}
+        posterWebp={s.posterWebp}
+        alt={s.alt}
+        duration={s.duration}
+        title={s.title}
+        captions={s.captions}
+      />
+      {s.caption && (
+        <figcaption className="text-sm text-charcoal-muted mt-3">{s.caption}</figcaption>
+      )}
+    </figure>
+  );
+}
+
 function renderSection(s, i) {
   const map = {
     prose: ProseSection,
@@ -150,6 +170,7 @@ function renderSection(s, i) {
     image: ImageSection,
     equivalencies: EquivalenciesSection,
     pullquote: PullQuoteSection,
+    video: VideoSection,
   };
   const Component = map[s.type];
   return Component ? <Component key={i} s={s} /> : null;

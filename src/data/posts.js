@@ -10,6 +10,23 @@
 
 export const posts = [
   {
+    date: 'October 2026',
+    category: 'Disaster Recovery & Solar Repair',
+    title: 'Back Online After Helene — ReWa 1 MW Solar Repair',
+    type: 'case-study',
+    excerpt:
+      "After Hurricane Helene damaged ReWa's 1-megawatt on-site solar array in Greenville, SC, Branham Group served as EPC contractor for the emergency repair and upgrade — rebuilt to FEMA-approved specifications and returned to service as a distributed energy resource. Includes a narrated site film.",
+    img: '/video/rewa-poster.jpg',
+    caseStudy: 'rewa-post-helene-solar-repair',
+    body: `Hurricane Helene caused extensive damage across the Southeast in 2024, including to the 1-megawatt solar photovoltaic array on the campus of Renewable Water Resources (ReWa), the regional water resource recovery utility serving Greenville County.
+
+Branham Group was selected as the Engineering, Procurement, and Construction contractor for the emergency repair and upgrade. Work included replacing approximately 38 Fronius Symo inverters, 42 circuit breakers and 12 fuses across four 480V panelboards, roughly 42 PV modules, and all field-crimped DC connections — along with repair of fire-damaged equipment racks, grounding remediation, and insulation integrity testing across all 317 DC and AC circuits.
+
+Work was performed to FEMA-approved specifications to support disaster reimbursement, with full documentation, before-and-after verification photography, and coordination with ReWa's Resiliency Program Coordinator throughout.
+
+The restored system now operates as a distributed energy resource, generating clean power directly at ReWa's facility and feeding surplus energy back to the surrounding distributed grid.`,
+  },
+  {
     date: 'July 2026',
     category: 'Agrivoltaics & Industry Events',
     title: 'Branham Group Attends 2026 Georgia Solar Farm Summit',

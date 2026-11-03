@@ -256,6 +256,31 @@ function collectRoutes() {
               { '@type': 'ListItem', position: 3, name: cs.title, item: url },
             ],
           },
+          /*
+           * Any case study carrying a video section also gets a VideoObject,
+           * so the film is indexable from the page it actually lives on
+           * rather than only from the homepage.
+           */
+          ...(() => {
+            const v = (cs.sections || []).find((sec) => sec.type === 'video');
+            if (!v) return [];
+            return [
+              {
+                '@type': 'VideoObject',
+                name: `${cs.title} — ${cs.subtitle}`,
+                description: cs.metaDescription,
+                thumbnailUrl: [`${SITE}${v.posterJpg}`],
+                contentUrl: `${SITE}${v.src}`,
+                uploadDate: '2026-11-02',
+                duration: 'PT1M58S',
+                publisher: {
+                  '@type': 'Organization',
+                  name: 'Branham Group, Inc.',
+                  logo: { '@type': 'ImageObject', url: `${SITE}/logo.png` },
+                },
+              },
+            ];
+          })(),
         ],
       },
     });

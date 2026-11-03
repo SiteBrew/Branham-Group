@@ -234,6 +234,8 @@ export const projects = [
   },
   {
     id: 7,
+    /* Full standalone page — also what the modal links out to. */
+    caseStudy: 'rewa-post-helene-solar-repair',
     client: 'Renewable Water Resources (ReWa)',
     title: 'ReWa \u2014 Post-Helene Solar PV Repair & Upgrade',
     category: 'Disaster Recovery & Solar Repair',
@@ -440,6 +442,16 @@ function ProjectModal({ project, onClose }) {
               </div>
             ))}
           </div>
+
+          {project.caseStudy && (
+            <a
+              href={`/news/${project.caseStudy}`}
+              className="inline-flex items-center gap-2 mb-8 btn-gold"
+            >
+              Read the full case study
+              <ChevronRight size={16} />
+            </a>
+          )}
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Left: overview + quote */}
