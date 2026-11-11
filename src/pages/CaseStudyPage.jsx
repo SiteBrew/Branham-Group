@@ -4,6 +4,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, Download, Share2, Quote } from 'lucide-react';
 import VideoPlayer from '../components/VideoPlayer';
 import { getCaseStudy } from '../data/caseStudies';
+import { imgSize } from '../lib/imageSize';
 
 const SITE = 'https://www.branham-group.com';
 
@@ -103,6 +104,7 @@ function ImageSection({ s }) {
           alt={s.alt}
           loading="lazy"
           className={`w-full ${s.contain ? 'object-contain max-h-[520px] mx-auto' : 'object-cover'}`}
+          {...imgSize(s.src)}
         />
       </div>
       {s.caption && (

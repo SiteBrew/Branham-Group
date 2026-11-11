@@ -1,4 +1,4 @@
-import { MapPin, Mail, AlertCircle, Loader2 } from 'lucide-react';
+import { MapPin, Mail, Phone, AlertCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 
 // Web3Forms delivers submissions straight to the address the key is registered
@@ -102,7 +102,23 @@ export default function Contact() {
                 </div>
               </div>
 
-              
+              {/*
+                The office line was not displayed anywhere on the main site —
+                only on case study pages. A contractor whose customers are on
+                job sites needs a number they can tap.
+              */}
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-gold/20 rounded flex items-center justify-center flex-shrink-0">
+                  <Phone size={18} className="text-gold" aria-hidden="true" />
+                </div>
+                <div>
+                  <div className="text-white font-semibold mb-1">Phone</div>
+                  <a href="tel:+18438236078" className="text-gray-400 text-sm hover:text-gold transition-colors">
+                    (843) 823-6078
+                  </a>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-gold/20 rounded flex items-center justify-center flex-shrink-0">
                   <Mail size={18} className="text-gold" aria-hidden="true" />

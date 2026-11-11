@@ -1,5 +1,6 @@
-import { MapPin } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { imgSize } from '../lib/imageSize';
 
 const links = {
   Company: [
@@ -37,7 +38,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-5">
-              <img src="/logo-white.webp" alt="Branham Group — EPC Services" className="h-28 w-auto" style={{ mixBlendMode: 'screen' }} />
+              <img src="/logo-white.webp" alt="Branham Group — EPC Services" className="h-28 w-auto" style={{ mixBlendMode: 'screen' }} {...imgSize('/logo-white.webp')} />
             </div>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
               Full-service Engineering, Procurement, and Construction company dedicated to
@@ -48,7 +49,19 @@ export default function Footer() {
                 <MapPin size={14} className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span>11 E Wall Street, Mount Pleasant, SC 29464</span>
               </div>
-                          </address>
+              <div className="flex items-start gap-2">
+                <Phone size={14} className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <a href="tel:+18438236078" className="hover:text-gold transition-colors">
+                  (843) 823-6078
+                </a>
+              </div>
+              <div className="flex items-start gap-2">
+                <Mail size={14} className="text-gold mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <a href="mailto:info@branham-group.com" className="hover:text-gold transition-colors">
+                  info@branham-group.com
+                </a>
+              </div>
+            </address>
             <div className="flex gap-3 mt-6">
               {[
                 { label: 'in', href: 'https://www.linkedin.com/company/branham-group-inc/', title: 'LinkedIn' },

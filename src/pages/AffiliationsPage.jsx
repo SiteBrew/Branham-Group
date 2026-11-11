@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { imgSize } from '../lib/imageSize';
 
 const affiliations = [
   {
@@ -129,6 +130,7 @@ export default function AffiliationsPage() {
                     alt={`${aff.name} logo`}
                     className="max-h-28 max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    {...imgSize(aff.logo)}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       e.currentTarget.parentElement.classList.add('logo-fallback');

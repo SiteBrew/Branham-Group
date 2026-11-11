@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { imgSize } from '../lib/imageSize';
 
 const navLinks = [
   { label: 'About Us', href: '/#about' },
@@ -33,11 +34,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" aria-label="Branham Group — Home" className="flex items-center">
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="Branham Group"
             className="h-20 md:h-28 w-auto"
-            width="220"
-            height="112"
+            {...imgSize('/logo.webp')}
           />
         </Link>
 
