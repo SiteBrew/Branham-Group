@@ -86,9 +86,9 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(links).map(([title, items]) => (
             <nav key={title} aria-label={`${title} links`}>
-              <h4 className="text-white font-bold uppercase tracking-wider text-xs mb-5">
+              <h3 className="text-white font-bold uppercase tracking-wider text-xs mb-5">
                 {title}
-              </h4>
+              </h3>
               <ul className="space-y-3">
                 {items.map((item) => (
                   <li key={item.label}>

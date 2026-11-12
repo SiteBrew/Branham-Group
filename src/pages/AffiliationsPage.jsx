@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
@@ -11,6 +11,7 @@ const affiliations = [
     desc: 'Branham Group is proud to be a 2025 Corporate Partner of the Lowcountry Land Trust — an organization dedicated to conserving the natural lands and waters of coastal South Carolina. Our partnership reflects our deep commitment to the region we call home and the ecosystems that define it.',
     href: 'https://lowcountrylandtrust.org/',
     logo: 'https://lowcountrylandtrust.org/wp-content/uploads/2021/12/LLT-Green-Logo-Transparent-Background.png',
+    logoSize: { width: 3908, height: 1296 },
     logoBg: 'bg-white',
     tag: 'Conservation',
     tagBg: 'bg-green-100 text-green-800',
@@ -31,6 +32,7 @@ const affiliations = [
     desc: 'As a proud member of the Sustain SC network, Branham Group is part of a statewide movement advancing sustainability across South Carolina\'s businesses, communities, and ecosystems. Sustain SC connects leaders who are committed to building a more resilient and environmentally responsible state.',
     href: 'https://www.sustainsouthcarolina.org/',
     logo: 'https://images.squarespace-cdn.com/content/v1/5fd7c514819561099a4b75e0/1607976343863-1ZQH659TVJ5ORHCW6TO2/sustain-sc_primary_less-pad.png',
+    logoSize: { width: 1200, height: 400 },
     logoBg: 'bg-white',
     tag: 'Sustainability',
     tagBg: 'bg-yellow-100 text-yellow-800',
@@ -50,7 +52,10 @@ const affiliations = [
     role: 'Member',
     desc: 'Branham Group participates in Global Charleston — an organization that connects the Charleston community to international business, culture, and collaboration. Our involvement reflects our belief that strong local roots and a global outlook are not mutually exclusive.',
     href: 'https://globalcharleston3.wpcomstaging.com/',
-    logo: 'https://globalcharleston3.wpcomstaging.com/wp-content/uploads/2024/01/Skype_Picture_2024_01_27T15_21_39_405Z-1024x355.jpeg',
+    // Hotlinked from globalcharleston3.wpcomstaging.com, which stopped
+    // serving it — the card showed a blank panel. Needs a real asset from
+    // the partner; until then the name renders as the fallback.
+    logo: null,
     logoBg: 'bg-white',
     tag: 'Community',
     tagBg: 'bg-purple-100 text-purple-800',
@@ -61,11 +66,36 @@ const affiliations = [
     desc: 'As a member of the South Carolina Solar Council, Branham Group works alongside industry peers to advance solar energy policy, education, and adoption throughout South Carolina. We are committed to the Council\'s mission of making the Palmetto State a national leader in clean energy.',
     href: 'https://www.scsolarcouncil.org/',
     logo: 'https://www.scsolarcouncil.org/resources/Pictures/scsc_web_on%20white.jpg',
+    logoSize: { width: 1151, height: 750 },
     logoBg: 'bg-white',
     tag: 'Clean Energy',
     tagBg: 'bg-amber-100 text-amber-700',
   },
 ];
+
+/** A partner's logo, or its name when there is no usable image. */
+function LogoOrName({ aff }) {
+  const [failed, setFailed] = useState(false);
+
+  if (!aff.logo || failed) {
+    return (
+      <span className="text-center font-black uppercase tracking-wider text-charcoal/70 text-lg leading-tight px-2">
+        {aff.name}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={aff.logo}
+      alt={`${aff.name} logo`}
+      className="max-h-28 max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+      loading="lazy"
+      {...(aff.logoSize ?? imgSize(aff.logo))}
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function AffiliationsPage() {
   useEffect(() => {
@@ -125,17 +155,14 @@ export default function AffiliationsPage() {
               >
                 {/* Logo display area — the hero of the card */}
                 <div className="flex items-center justify-center p-10 bg-white border-b border-gray-100 h-48">
-                  <img
-                    src={aff.logo}
-                    alt={`${aff.name} logo`}
-                    className="max-h-28 max-w-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                    {...imgSize(aff.logo)}
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement.classList.add('logo-fallback');
-                    }}
-                  />
+                  {/*
+                    onError used to hide the image and add a `logo-fallback`
+                    class that no stylesheet defines, so a logo that failed to
+                    load left an empty 12rem panel. Render the partner's name
+                    instead — it works without JavaScript and reads as a
+                    wordmark rather than a gap.
+                  */}
+                  <LogoOrName aff={aff} />
                 </div>
 
                 {/* Card content */}
