@@ -140,21 +140,44 @@ function headFor({ url, title, socialTitle, description, image, ogType, robots, 
   return tags.map((t) => `    ${t}`).join('\n');
 }
 
+/** The page's own name, without the " | Branham Group" suffix the title carries. */
+function breadcrumbName(title) {
+  return String(title).split('|')[0].replace(/\s*[—–-]\s*$/, '').trim();
+}
+
 /** Collect every route we want prerendered. */
 function collectRoutes() {
   const routes = [];
 
   for (const [route, meta] of Object.entries(routeMeta)) {
+    const url = route === '/' ? `${SITE}/` : `${SITE}${route}`;
+
+    /*
+     * Breadcrumbs for the top-level routes. The service and case-study pages
+     * built below already carry one; these did not, so Google printed the raw
+     * URL under the result instead of a Home > Section path. Where a route
+     * already has schema, emit both nodes — an array is valid JSON-LD.
+     */
+    const crumb = route === '/' ? null : {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: breadcrumbName(meta.title), item: url },
+      ],
+    };
+    const jsonLd = crumb ? (meta.jsonLd ? [meta.jsonLd, crumb] : crumb) : meta.jsonLd;
+
     routes.push({
       route,
-      url: route === '/' ? `${SITE}/` : `${SITE}${route}`,
+      url,
       title: meta.title,
       description: meta.description,
       image: meta.image ? `${SITE}${meta.image}` : DEFAULT_OG_IMAGE,
       ogType: meta.ogType,
       robots: meta.robots,
       preloadImage: meta.preloadImage,
-      jsonLd: meta.jsonLd,
+      jsonLd,
     });
   }
 
