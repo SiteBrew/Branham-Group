@@ -10,8 +10,8 @@ const affiliations = [
     role: '2025 Corporate Partner',
     desc: 'Branham Group is proud to be a 2025 Corporate Partner of the Lowcountry Land Trust — an organization dedicated to conserving the natural lands and waters of coastal South Carolina. Our partnership reflects our deep commitment to the region we call home and the ecosystems that define it.',
     href: 'https://lowcountrylandtrust.org/',
-    logo: 'https://lowcountrylandtrust.org/wp-content/uploads/2021/12/LLT-Green-Logo-Transparent-Background.png',
-    logoSize: { width: 3908, height: 1296 },
+    logo: '/logos/lowcountry-land-trust.webp',
+    logoSize: { width: 560, height: 186 },
     logoBg: 'bg-white',
     tag: 'Conservation',
     tagBg: 'bg-green-100 text-green-800',
@@ -31,8 +31,8 @@ const affiliations = [
     role: 'Member Network',
     desc: 'As a proud member of the Sustain SC network, Branham Group is part of a statewide movement advancing sustainability across South Carolina\'s businesses, communities, and ecosystems. Sustain SC connects leaders who are committed to building a more resilient and environmentally responsible state.',
     href: 'https://www.sustainsouthcarolina.org/',
-    logo: 'https://images.squarespace-cdn.com/content/v1/5fd7c514819561099a4b75e0/1607976343863-1ZQH659TVJ5ORHCW6TO2/sustain-sc_primary_less-pad.png',
-    logoSize: { width: 1200, height: 400 },
+    logo: '/logos/sustain-sc.webp',
+    logoSize: { width: 560, height: 187 },
     logoBg: 'bg-white',
     tag: 'Sustainability',
     tagBg: 'bg-yellow-100 text-yellow-800',
@@ -65,6 +65,9 @@ const affiliations = [
     role: 'Member',
     desc: 'As a member of the South Carolina Solar Council, Branham Group works alongside industry peers to advance solar energy policy, education, and adoption throughout South Carolina. We are committed to the Council\'s mission of making the Palmetto State a national leader in clean energy.',
     href: 'https://www.scsolarcouncil.org/',
+    // Still hotlinked: scsolarcouncil.org serves no CORS header, so this one
+    // could not be copied locally the way the other two were. Replace with a
+    // local file when the Council supplies one.
     logo: 'https://www.scsolarcouncil.org/resources/Pictures/scsc_web_on%20white.jpg',
     logoSize: { width: 1151, height: 750 },
     logoBg: 'bg-white',

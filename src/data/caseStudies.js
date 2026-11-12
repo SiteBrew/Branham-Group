@@ -14,6 +14,9 @@ export const caseStudies = [
     subtitle: 'A Case Study of Healthcare and Environmental Sustainability',
     deck: 'How a National Healthcare Organization is Using Renewable Energy to Reduce Costs and Emissions',
     date: 'February 2026',
+    // ISO 8601 for schema. Month precision because that is all the source
+    // says; inventing a day would assert something nobody told us.
+    datePublished: '2026-02',
     byline: 'By Branham Group, Inc.',
     heroImg: '/case-studies/hospital-solar-sunset.webp',
     pdf: '/case-studies/BG_Case-Study-Healthcare.pdf',
@@ -185,6 +188,7 @@ export const caseStudies = [
     subtitle: 'A Case Study of City Roots Farm — Columbia, SC',
     deck: 'From Seed to Sustainability: Achieving Net-Zero Energy Usage for an Organic Leafy Greens Farm',
     date: 'July 2024',
+    datePublished: '2024-07',
     byline: 'By Jarrett Branham, Brandy Freeling, and Eric McClam',
     heroImg: '/case-studies/cityroots-aerial-farm.webp',
     pdf: '/case-studies/BG_Case-Study-City-Roots.pdf',
@@ -512,6 +516,7 @@ export const caseStudies = [
     subtitle: 'Athens, GA — July 18, 2026',
     deck: 'Southeast EPC leader engages with nation\'s premier agrivoltaics conference, reinforcing commitment to responsible solar development and land stewardship.',
     date: 'July 18, 2026',
+    datePublished: '2026-07-18',
     byline: 'Branham Group, Inc.',
     heroImg: '/gasfs-2026-hero.webp',
     pdf: null,
@@ -647,10 +652,11 @@ export const caseStudies = [
     subtitle: 'ReWa 1 MW Solar PV Repair & Upgrade — Greenville, SC',
     deck: "Rebuilding a storm-damaged 1-megawatt solar array to FEMA-approved specifications, and returning it to service as a distributed energy resource.",
     date: 'Completed October 2026',
+    datePublished: '2026-10',
     byline: 'Branham Group, Inc.',
     heroImg: '/video/rewa-poster.jpg',
     metaDescription:
-      "After Hurricane Helene damaged ReWa's 1 MW on-site solar array in Greenville, SC, Branham Group served as EPC contractor for the emergency repair and upgrade — completed October 2026 to FEMA-approved specifications.",
+      "Branham Group served as EPC contractor repairing and upgrading ReWa's hurricane-damaged 1 MW solar array in Greenville, SC, back online October 2026.",
     stats: [
       { value: '1', unit: 'MW', label: 'System Size' },
       { value: '~38', unit: '', label: 'Inverters Replaced' },

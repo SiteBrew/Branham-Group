@@ -372,7 +372,7 @@ export default function CaseStudyPage() {
               <p>11 E Wall Street, Mount Pleasant, SC 29464</p>
               <p>
                 Phone:{' '}
-                <a href="tel:8438236078" className="text-gold hover:underline">
+                <a href="tel:+18438236078" className="text-gold hover:underline">
                   843.823.6078
                 </a>{' '}
                 &nbsp;|&nbsp; Fax: 843.604.9098
