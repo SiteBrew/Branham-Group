@@ -263,7 +263,15 @@ function collectRoutes() {
             headline: `${cs.title} — ${cs.subtitle}`,
             description: cs.metaDescription,
             image,
-            datePublished: cs.date,
+            /*
+             * `cs.date` is a display string — "July 2024", and on two entries
+             * "Project Summary", which is a label and not a date at all. It was
+             * being fed straight into datePublished, so none of the six Articles
+             * carried a valid ISO 8601 date and Google discarded the markup.
+             * Emit the explicit ISO field, and omit the property entirely when
+             * nobody has supplied a real date.
+             */
+            ...(cs.datePublished ? { datePublished: cs.datePublished } : {}),
             articleSection: cs.industry,
             author: { '@type': 'Organization', name: 'Branham Group, Inc.' },
             publisher: {
